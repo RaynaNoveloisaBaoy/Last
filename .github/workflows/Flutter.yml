@@ -24,8 +24,8 @@ jobs:
 #set up flutter
   buildFlutter:
     runs-on: ubuntu-latest
-    env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+   # env:
+    #    ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
     steps:
        - name: Installing Flutter
@@ -34,7 +34,8 @@ jobs:
           version: $FLUTTER_VERSION
        #- run: echo $PATH
          # run: where flutter 
-       
+          run: 
+            cd Build
        - name: Installing dependencies
          run: flutter pub get
       # - name: Running tests
