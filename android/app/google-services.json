@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "870406778307",
+    "project_id": "waplogin-469a3",
+    "storage_bucket": "waplogin-469a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870406778307:android:cb695dc5f7dc3da5102176",
+        "android_client_info": {
+          "package_name": "com.example.wap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870406778307-0jfftmoibovn81qol6g248ba4sufdfjc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXeH6mGjgQohMJBK8XDXCRdCUZlGQOYl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870406778307-0jfftmoibovn81qol6g248ba4sufdfjc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
