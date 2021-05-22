@@ -1,0 +1,613 @@
+define(['dart_sdk', 'packages/firebase_storage_platform_interface/src/platform_interface/platform_interface_task_snapshot.dart', 'packages/firebase_core/firebase_core.dart', 'packages/firebase_storage/src/utils.dart', 'packages/quiver/src/core/hash.dart', 'packages/firebase_core_platform_interface/firebase_core_platform_interface.dart', 'packages/firebase_storage_platform_interface/src/put_string_format.dart', 'packages/firebase_storage_platform_interface/src/settable_metadata.dart', 'packages/firebase_storage_platform_interface/src/full_metadata.dart', 'packages/firebase_storage_platform_interface/src/list_options.dart', 'packages/firebase_storage_platform_interface/src/task_state.dart'], (function load__packages__firebase_storage__firebase_storage_dart(dart_sdk, packages__firebase_storage_platform_interface__src__platform_interface__platform_interface_task_snapshot$46dart, packages__firebase_core__firebase_core$46dart, packages__firebase_storage__src__utils$46dart, packages__quiver__src__core__hash$46dart, packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart, packages__firebase_storage_platform_interface__src__put_string_format$46dart, packages__firebase_storage_platform_interface__src__settable_metadata$46dart, packages__firebase_storage_platform_interface__src__full_metadata$46dart, packages__firebase_storage_platform_interface__src__list_options$46dart, packages__firebase_storage_platform_interface__src__task_state$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const async = dart_sdk.async;
+  const typed_data = dart_sdk.typed_data;
+  const convert = dart_sdk.convert;
+  const io = dart_sdk.io;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const platform_interface_firebase_storage = packages__firebase_storage_platform_interface__src__platform_interface__platform_interface_task_snapshot$46dart.src__platform_interface__platform_interface_firebase_storage;
+  const platform_interface_reference = packages__firebase_storage_platform_interface__src__platform_interface__platform_interface_task_snapshot$46dart.src__platform_interface__platform_interface_reference;
+  const platform_interface_list_result = packages__firebase_storage_platform_interface__src__platform_interface__platform_interface_task_snapshot$46dart.src__platform_interface__platform_interface_list_result;
+  const platform_interface_task = packages__firebase_storage_platform_interface__src__platform_interface__platform_interface_task_snapshot$46dart.src__platform_interface__platform_interface_task;
+  const platform_interface_task_snapshot = packages__firebase_storage_platform_interface__src__platform_interface__platform_interface_task_snapshot$46dart.src__platform_interface__platform_interface_task_snapshot;
+  const firebase_core = packages__firebase_core__firebase_core$46dart.firebase_core;
+  const utils = packages__firebase_storage__src__utils$46dart.src__utils;
+  const hash = packages__quiver__src__core__hash$46dart.src__core__hash;
+  const firebase_core_platform_interface = packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart.firebase_core_platform_interface;
+  const put_string_format = packages__firebase_storage_platform_interface__src__put_string_format$46dart.src__put_string_format;
+  const settable_metadata = packages__firebase_storage_platform_interface__src__settable_metadata$46dart.src__settable_metadata;
+  const full_metadata = packages__firebase_storage_platform_interface__src__full_metadata$46dart.src__full_metadata;
+  const list_options = packages__firebase_storage_platform_interface__src__list_options$46dart.src__list_options;
+  const task_state = packages__firebase_storage_platform_interface__src__task_state$46dart.src__task_state;
+  var firebase_storage = Object.create(dart.library);
+  var $startsWith = dartx.startsWith;
+  var $replaceFirst = dartx.replaceFirst;
+  var $containsKey = dartx.containsKey;
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $isEmpty = dartx.isEmpty;
+  var $_equals = dartx._equals;
+  var $hashCode = dartx.hashCode;
+  var $toString = dartx.toString;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    FirebaseStorageL: () => (T.FirebaseStorageL = dart.constFn(dart.legacy(firebase_storage.FirebaseStorage)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    IdentityMapOfStringL$FirebaseStorageL: () => (T.IdentityMapOfStringL$FirebaseStorageL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.FirebaseStorageL())))(),
+    ListResultL: () => (T.ListResultL = dart.constFn(dart.legacy(firebase_storage.ListResult)))(),
+    Uint8ListL: () => (T.Uint8ListL = dart.constFn(dart.legacy(typed_data.Uint8List)))(),
+    ReferenceL: () => (T.ReferenceL = dart.constFn(dart.legacy(firebase_storage.Reference)))(),
+    ReferencePlatformL: () => (T.ReferencePlatformL = dart.constFn(dart.legacy(platform_interface_reference.ReferencePlatform)))(),
+    ReferencePlatformLToReferenceL: () => (T.ReferencePlatformLToReferenceL = dart.constFn(dart.fnType(T.ReferenceL(), [T.ReferencePlatformL()])))(),
+    TaskSnapshotL: () => (T.TaskSnapshotL = dart.constFn(dart.legacy(firebase_storage.TaskSnapshot)))(),
+    TaskSnapshotPlatformL: () => (T.TaskSnapshotPlatformL = dart.constFn(dart.legacy(platform_interface_task_snapshot.TaskSnapshotPlatform)))(),
+    TaskSnapshotPlatformLToTaskSnapshotL: () => (T.TaskSnapshotPlatformLToTaskSnapshotL = dart.constFn(dart.fnType(T.TaskSnapshotL(), [T.TaskSnapshotPlatformL()])))(),
+    FutureOrOfTaskSnapshotL: () => (T.FutureOrOfTaskSnapshotL = dart.constFn(async.FutureOr$(T.TaskSnapshotL())))(),
+    FutureOrLOfTaskSnapshotL: () => (T.FutureOrLOfTaskSnapshotL = dart.constFn(dart.legacy(T.FutureOrOfTaskSnapshotL())))(),
+    VoidToFutureOrLOfTaskSnapshotL: () => (T.VoidToFutureOrLOfTaskSnapshotL = dart.constFn(dart.fnType(T.FutureOrLOfTaskSnapshotL(), [])))(),
+    VoidToLFutureOrLOfTaskSnapshotL: () => (T.VoidToLFutureOrLOfTaskSnapshotL = dart.constFn(dart.legacy(T.VoidToFutureOrLOfTaskSnapshotL())))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: put_string_format.PutStringFormat.prototype,
+        [_name]: "PutStringFormat.raw",
+        index: 0
+      });
+    }
+  }, false);
+  var C = [void 0];
+  var I = [
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-7.0.0/lib/src/firebase_storage.dart",
+    "package:firebase_storage/firebase_storage.dart",
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-7.0.0/lib/src/reference.dart",
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-7.0.0/lib/src/task_snapshot.dart"
+  ];
+  var app$ = dart.privateName(firebase_storage, "FirebaseStorage.app");
+  var bucket$ = dart.privateName(firebase_storage, "FirebaseStorage.bucket");
+  var _delegatePackingProperty = dart.privateName(firebase_storage, "_delegatePackingProperty");
+  var _delegate$ = dart.privateName(firebase_storage, "_delegate");
+  firebase_storage.FirebaseStorage = class FirebaseStorage extends firebase_core_platform_interface.FirebasePluginPlatform {
+    get app() {
+      return this[app$];
+    }
+    set app(value) {
+      this[app$] = value;
+    }
+    get bucket() {
+      return this[bucket$];
+    }
+    set bucket(value) {
+      this[bucket$] = value;
+    }
+    get [_delegate$]() {
+      if (this[_delegatePackingProperty] == null) {
+        this[_delegatePackingProperty] = platform_interface_firebase_storage.FirebaseStoragePlatform.instanceFor({app: this.app, bucket: this.bucket});
+      }
+      return this[_delegatePackingProperty];
+    }
+    get maxOperationRetryTime() {
+      return new core.Duration.new({milliseconds: this[_delegate$].maxOperationRetryTime});
+    }
+    get maxUploadRetryTime() {
+      return new core.Duration.new({milliseconds: this[_delegate$].maxUploadRetryTime});
+    }
+    get maxDownloadRetryTime() {
+      return new core.Duration.new({milliseconds: this[_delegate$].maxDownloadRetryTime});
+    }
+    static get instance() {
+      return firebase_storage.FirebaseStorage.instanceFor({app: firebase_core.Firebase.app()});
+    }
+    static instanceFor(opts) {
+      let app = opts && 'app' in opts ? opts.app : null;
+      let bucket = opts && 'bucket' in opts ? opts.bucket : null;
+      app == null ? app = firebase_core.Firebase.app() : null;
+      if (!(app != null)) dart.assertFailed(null, I[0], 66, 12, "app != null");
+      bucket == null ? bucket = app.options.storageBucket : null;
+      if (bucket == null) {
+        if (app.name === "[DEFAULT]") {
+          firebase_storage._throwNoBucketError("No default storage bucket could be found. Ensure you have correctly followed the Getting Started guide.");
+        } else {
+          firebase_storage._throwNoBucketError("No storage bucket could be found for the app '" + dart.str(app.name) + "'. Ensure you have set the [storageBucket] on [FirebaseOptions] whilst initializing the secondary Firebase app.");
+        }
+      }
+      if (bucket[$startsWith]("gs://")) {
+        bucket = bucket[$replaceFirst]("gs://", "");
+      }
+      let key = dart.str(app.name) + "|" + dart.str(bucket);
+      if (dart.test(firebase_storage.FirebaseStorage._cachedInstances[$containsKey](key))) {
+        return firebase_storage.FirebaseStorage._cachedInstances[$_get](key);
+      }
+      let newInstance = new firebase_storage.FirebaseStorage.__({app: app, bucket: bucket});
+      firebase_storage.FirebaseStorage._cachedInstances[$_set](key, newInstance);
+      return newInstance;
+    }
+    ref(path = null) {
+      path == null ? path = "/" : null;
+      path = path[$isEmpty] ? "/" : path;
+      return new firebase_storage.Reference.__(this, this[_delegate$].ref(path));
+    }
+    refFromURL(url) {
+      if (!(url != null)) dart.assertFailed(null, I[0], 118, 12, "url != null");
+      if (!(url[$startsWith]("gs://") || url[$startsWith]("http"))) dart.assertFailed("'a url must start with 'gs://' or 'https://'", I[0], 119, 12, "url.startsWith('gs://') || url.startsWith('http')");
+      let bucket = null;
+      let path = null;
+      if (url[$startsWith]("http")) {
+        let parts = utils.partsFromHttpUrl(url);
+        if (!(parts != null)) dart.assertFailed("url could not be parsed, ensure it's a valid storage url", I[0], 128, 14, "parts != null");
+        bucket = parts[$_get]("bucket");
+        path = parts[$_get]("path");
+      } else {
+        bucket = utils.bucketFromGoogleStorageUrl(url);
+        path = utils.pathFromGoogleStorageUrl(url);
+      }
+      return firebase_storage.FirebaseStorage.instanceFor({app: this.app, bucket: "gs://" + dart.str(bucket)}).ref(path);
+    }
+    setMaxOperationRetryTime(time) {
+      if (!(time != null)) dart.assertFailed(null, I[0], 144, 12, "time != null");
+      if (!!dart.test(time.isNegative)) dart.assertFailed(null, I[0], 145, 12, "!time.isNegative");
+      return this[_delegate$].setMaxOperationRetryTime(time.inMilliseconds);
+    }
+    setMaxUploadRetryTime(time) {
+      if (!(time != null)) dart.assertFailed(null, I[0], 151, 12, "time != null");
+      if (!!dart.test(time.isNegative)) dart.assertFailed(null, I[0], 152, 12, "!time.isNegative");
+      return this[_delegate$].setMaxUploadRetryTime(time.inMilliseconds);
+    }
+    setMaxDownloadRetryTime(time) {
+      if (!(time != null)) dart.assertFailed(null, I[0], 158, 12, "time != null");
+      if (!!dart.test(time.isNegative)) dart.assertFailed(null, I[0], 159, 12, "!time.isNegative");
+      return this[_delegate$].setMaxDownloadRetryTime(time.inMilliseconds);
+    }
+    _equals(o) {
+      if (o == null) return false;
+      return T.FirebaseStorageL().is(o) && o.app.name == this.app.name && o.bucket == this.bucket;
+    }
+    get hashCode() {
+      return hash.hash2(this.app.name, this.bucket);
+    }
+    toString() {
+      return dart.str(dart.wrapType(firebase_storage.FirebaseStorage)) + "(app: " + dart.str(this.app.name) + ", bucket: " + dart.str(this.bucket) + ")";
+    }
+  };
+  (firebase_storage.FirebaseStorage.__ = function(opts) {
+    let app = opts && 'app' in opts ? opts.app : null;
+    let bucket = opts && 'bucket' in opts ? opts.bucket : null;
+    this[_delegatePackingProperty] = null;
+    this[app$] = app;
+    this[bucket$] = bucket;
+    firebase_storage.FirebaseStorage.__proto__.new.call(this, app.name, "plugins.flutter.io/firebase_storage");
+    ;
+  }).prototype = firebase_storage.FirebaseStorage.prototype;
+  dart.addTypeTests(firebase_storage.FirebaseStorage);
+  dart.addTypeCaches(firebase_storage.FirebaseStorage);
+  dart.setMethodSignature(firebase_storage.FirebaseStorage, () => ({
+    __proto__: dart.getMethods(firebase_storage.FirebaseStorage.__proto__),
+    ref: dart.fnType(dart.legacy(firebase_storage.Reference), [], [dart.legacy(core.String)]),
+    refFromURL: dart.fnType(dart.legacy(firebase_storage.Reference), [dart.legacy(core.String)]),
+    setMaxOperationRetryTime: dart.fnType(dart.void, [dart.legacy(core.Duration)]),
+    setMaxUploadRetryTime: dart.fnType(dart.void, [dart.legacy(core.Duration)]),
+    setMaxDownloadRetryTime: dart.fnType(dart.void, [dart.legacy(core.Duration)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.dynamic]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.dynamic]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setGetterSignature(firebase_storage.FirebaseStorage, () => ({
+    __proto__: dart.getGetters(firebase_storage.FirebaseStorage.__proto__),
+    [_delegate$]: dart.legacy(platform_interface_firebase_storage.FirebaseStoragePlatform),
+    maxOperationRetryTime: dart.legacy(core.Duration),
+    maxUploadRetryTime: dart.legacy(core.Duration),
+    maxDownloadRetryTime: dart.legacy(core.Duration),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(firebase_storage.FirebaseStorage, I[1]);
+  dart.setFieldSignature(firebase_storage.FirebaseStorage, () => ({
+    __proto__: dart.getFields(firebase_storage.FirebaseStorage.__proto__),
+    [_delegatePackingProperty]: dart.fieldType(dart.legacy(platform_interface_firebase_storage.FirebaseStoragePlatform)),
+    app: dart.fieldType(dart.legacy(firebase_core.FirebaseApp)),
+    bucket: dart.fieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_storage.FirebaseStorage, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(firebase_storage.FirebaseStorage, ['hashCode']);
+  dart.defineLazy(firebase_storage.FirebaseStorage, {
+    /*firebase_storage.FirebaseStorage._cachedInstances*/get _cachedInstances() {
+      return new (T.IdentityMapOfStringL$FirebaseStorageL()).new();
+    }
+  }, true);
+  var storage$ = dart.privateName(firebase_storage, "Reference.storage");
+  var _name = dart.privateName(put_string_format, "_name");
+  firebase_storage.Reference = class Reference extends core.Object {
+    get storage() {
+      return this[storage$];
+    }
+    set storage(value) {
+      super.storage = value;
+    }
+    get bucket() {
+      return this[_delegate$].bucket;
+    }
+    get fullPath() {
+      return this[_delegate$].fullPath;
+    }
+    get name() {
+      return this[_delegate$].name;
+    }
+    get parent() {
+      let referenceParentPlatform = this[_delegate$].parent;
+      if (referenceParentPlatform == null) {
+        return null;
+      }
+      return new firebase_storage.Reference.__(this.storage, referenceParentPlatform);
+    }
+    get root() {
+      return new firebase_storage.Reference.__(this.storage, this[_delegate$].root);
+    }
+    child(path) {
+      if (!(path != null)) dart.assertFailed(null, I[2], 50, 12, "path != null");
+      return new firebase_storage.Reference.__(this.storage, this[_delegate$].child(path));
+    }
+    delete() {
+      return this[_delegate$].delete();
+    }
+    getDownloadURL() {
+      return this[_delegate$].getDownloadURL();
+    }
+    getMetadata() {
+      return this[_delegate$].getMetadata();
+    }
+    list(options = null) {
+      return async.async(T.ListResultL(), (function* list() {
+        let t0;
+        if ((t0 = options, t0 == null ? null : t0.maxResults) != null) {
+          if (!(dart.notNull(options.maxResults) > 0)) dart.assertFailed(null, I[2], 76, 14, "options.maxResults > 0");
+          if (!(dart.notNull(options.maxResults) <= 1000)) dart.assertFailed(null, I[2], 77, 14, "options.maxResults <= 1000");
+        }
+        return new firebase_storage.ListResult.__(this.storage, yield this[_delegate$].list(options));
+      }).bind(this));
+    }
+    listAll() {
+      return async.async(T.ListResultL(), (function* listAll() {
+        return new firebase_storage.ListResult.__(this.storage, yield this[_delegate$].listAll());
+      }).bind(this));
+    }
+    getData(maxSize = null) {
+      return async.async(T.Uint8ListL(), (function* getData() {
+        maxSize == null ? maxSize = 10485760 : null;
+        if (!(dart.notNull(maxSize) > 0)) dart.assertFailed(null, I[2], 106, 12, "maxSize > 0");
+        return this[_delegate$].getData(maxSize);
+      }).bind(this));
+    }
+    putData(data, metadata = null) {
+      if (!(data != null)) dart.assertFailed(null, I[2], 116, 12, "data != null");
+      return new firebase_storage.UploadTask.__(this.storage, this[_delegate$].putData(data, metadata));
+    }
+    putBlob(blob, metadata = null) {
+      if (!(blob != null)) dart.assertFailed(null, I[2], 124, 12, "blob != null");
+      return new firebase_storage.UploadTask.__(this.storage, this[_delegate$].putBlob(blob, metadata));
+    }
+    putFile(file, metadata = null) {
+      if (!(file != null)) dart.assertFailed(null, I[2], 132, 12, "file != null");
+      if (!dart.test(file.absolute.existsSync())) dart.assertFailed(null, I[2], 133, 12, "file.absolute.existsSync()");
+      return new firebase_storage.UploadTask.__(this.storage, this[_delegate$].putFile(file, metadata));
+    }
+    putString(data, opts) {
+      let format = opts && 'format' in opts ? opts.format : C[0] || CT.C0;
+      let metadata = opts && 'metadata' in opts ? opts.metadata : null;
+      if (!(data != null)) dart.assertFailed(null, I[2], 152, 12, "data != null");
+      if (!(format != null)) dart.assertFailed(null, I[2], 153, 12, "format != null");
+      if (format == put_string_format.PutStringFormat.raw) {
+        data = convert.base64.encode(convert.utf8.encode(data));
+        format = put_string_format.PutStringFormat.base64;
+      }
+      if (format == put_string_format.PutStringFormat.dataUrl) {
+        format = put_string_format.PutStringFormat.base64;
+        let uri = core.UriData.fromUri(core.Uri.parse(data));
+        if (!dart.test(uri.isBase64)) dart.assertFailed(null, I[2], 165, 14, "uri.isBase64");
+        data = uri.contentText;
+        if (metadata == null && uri.mimeType[$isNotEmpty]) {
+          metadata = new settable_metadata.SettableMetadata.new({contentType: uri.mimeType});
+        }
+        if ((metadata.contentType == null || metadata.contentType[$isEmpty]) && uri.mimeType[$isNotEmpty]) {
+          metadata = new settable_metadata.SettableMetadata.new({cacheControl: metadata.cacheControl, contentDisposition: metadata.contentDisposition, contentEncoding: metadata.contentEncoding, contentLanguage: metadata.contentLanguage, contentType: uri.mimeType});
+        }
+      }
+      return new firebase_storage.UploadTask.__(this.storage, this[_delegate$].putString(data, format, metadata));
+    }
+    updateMetadata(metadata) {
+      if (!(metadata != null)) dart.assertFailed(null, I[2], 194, 12, "metadata != null");
+      return this[_delegate$].updateMetadata(metadata);
+    }
+    writeToFile(file) {
+      if (!(file != null)) dart.assertFailed(null, I[2], 202, 12, "file != null");
+      return new firebase_storage.DownloadTask.__(this.storage, this[_delegate$].writeToFile(file));
+    }
+    _equals(o) {
+      if (o == null) return false;
+      return T.ReferenceL().is(o) && o.fullPath == this.fullPath && dart.equals(o.storage, this.storage);
+    }
+    get hashCode() {
+      return hash.hash2(this.storage, this.fullPath);
+    }
+    toString() {
+      return dart.str(dart.wrapType(firebase_storage.Reference)) + "(app: " + dart.str(this.storage.app.name) + ", fullPath: " + dart.str(this.fullPath) + ")";
+    }
+  };
+  (firebase_storage.Reference.__ = function(storage, _delegate) {
+    this[storage$] = storage;
+    this[_delegate$] = _delegate;
+    platform_interface_reference.ReferencePlatform.verifyExtends(this[_delegate$]);
+  }).prototype = firebase_storage.Reference.prototype;
+  dart.addTypeTests(firebase_storage.Reference);
+  dart.addTypeCaches(firebase_storage.Reference);
+  dart.setMethodSignature(firebase_storage.Reference, () => ({
+    __proto__: dart.getMethods(firebase_storage.Reference.__proto__),
+    child: dart.fnType(dart.legacy(firebase_storage.Reference), [dart.legacy(core.String)]),
+    delete: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    getDownloadURL: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.String))), []),
+    getMetadata: dart.fnType(dart.legacy(async.Future$(dart.legacy(full_metadata.FullMetadata))), []),
+    list: dart.fnType(dart.legacy(async.Future$(dart.legacy(firebase_storage.ListResult))), [], [dart.legacy(list_options.ListOptions)]),
+    listAll: dart.fnType(dart.legacy(async.Future$(dart.legacy(firebase_storage.ListResult))), []),
+    getData: dart.fnType(dart.legacy(async.Future$(dart.legacy(typed_data.Uint8List))), [], [dart.legacy(core.int)]),
+    putData: dart.fnType(dart.legacy(firebase_storage.UploadTask), [dart.legacy(typed_data.Uint8List)], [dart.legacy(settable_metadata.SettableMetadata)]),
+    putBlob: dart.fnType(dart.legacy(firebase_storage.UploadTask), [dart.dynamic], [dart.legacy(settable_metadata.SettableMetadata)]),
+    putFile: dart.fnType(dart.legacy(firebase_storage.UploadTask), [dart.legacy(io.File)], [dart.legacy(settable_metadata.SettableMetadata)]),
+    putString: dart.fnType(dart.legacy(firebase_storage.UploadTask), [dart.legacy(core.String)], {format: dart.legacy(put_string_format.PutStringFormat), metadata: dart.legacy(settable_metadata.SettableMetadata)}, {}),
+    updateMetadata: dart.fnType(dart.legacy(async.Future$(dart.legacy(full_metadata.FullMetadata))), [dart.legacy(settable_metadata.SettableMetadata)]),
+    writeToFile: dart.fnType(dart.legacy(firebase_storage.DownloadTask), [dart.legacy(io.File)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.dynamic]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.dynamic]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setGetterSignature(firebase_storage.Reference, () => ({
+    __proto__: dart.getGetters(firebase_storage.Reference.__proto__),
+    bucket: dart.legacy(core.String),
+    fullPath: dart.legacy(core.String),
+    name: dart.legacy(core.String),
+    parent: dart.legacy(firebase_storage.Reference),
+    root: dart.legacy(firebase_storage.Reference),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(firebase_storage.Reference, I[1]);
+  dart.setFieldSignature(firebase_storage.Reference, () => ({
+    __proto__: dart.getFields(firebase_storage.Reference.__proto__),
+    [_delegate$]: dart.fieldType(dart.legacy(platform_interface_reference.ReferencePlatform)),
+    storage: dart.finalFieldType(dart.legacy(firebase_storage.FirebaseStorage))
+  }));
+  dart.defineExtensionMethods(firebase_storage.Reference, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(firebase_storage.Reference, ['hashCode']);
+  var storage$0 = dart.privateName(firebase_storage, "ListResult.storage");
+  firebase_storage.ListResult = class ListResult extends core.Object {
+    get storage() {
+      return this[storage$0];
+    }
+    set storage(value) {
+      super.storage = value;
+    }
+    get items() {
+      return this[_delegate$].items[$map](T.ReferenceL(), dart.fn(referencePlatform => new firebase_storage.Reference.__(this.storage, referencePlatform), T.ReferencePlatformLToReferenceL()))[$toList]();
+    }
+    get nextPageToken() {
+      return this[_delegate$].nextPageToken;
+    }
+    get prefixes() {
+      return this[_delegate$].prefixes[$map](T.ReferenceL(), dart.fn(referencePlatform => new firebase_storage.Reference.__(this.storage, referencePlatform), T.ReferencePlatformLToReferenceL()))[$toList]();
+    }
+  };
+  (firebase_storage.ListResult.__ = function(storage, _delegate) {
+    this[storage$0] = storage;
+    this[_delegate$] = _delegate;
+    platform_interface_list_result.ListResultPlatform.verifyExtends(this[_delegate$]);
+  }).prototype = firebase_storage.ListResult.prototype;
+  dart.addTypeTests(firebase_storage.ListResult);
+  dart.addTypeCaches(firebase_storage.ListResult);
+  dart.setGetterSignature(firebase_storage.ListResult, () => ({
+    __proto__: dart.getGetters(firebase_storage.ListResult.__proto__),
+    items: dart.legacy(core.List$(dart.legacy(firebase_storage.Reference))),
+    nextPageToken: dart.legacy(core.String),
+    prefixes: dart.legacy(core.List$(dart.legacy(firebase_storage.Reference)))
+  }));
+  dart.setLibraryUri(firebase_storage.ListResult, I[1]);
+  dart.setFieldSignature(firebase_storage.ListResult, () => ({
+    __proto__: dart.getFields(firebase_storage.ListResult.__proto__),
+    [_delegate$]: dart.fieldType(dart.legacy(platform_interface_list_result.ListResultPlatform)),
+    storage: dart.finalFieldType(dart.legacy(firebase_storage.FirebaseStorage))
+  }));
+  var storage$1 = dart.privateName(firebase_storage, "Task.storage");
+  firebase_storage.Task = class Task extends core.Object {
+    get storage() {
+      return this[storage$1];
+    }
+    set storage(value) {
+      super.storage = value;
+    }
+    get snapshotEvents() {
+      return this[_delegate$].snapshotEvents.map(T.TaskSnapshotL(), dart.fn(snapshotDelegate => new firebase_storage.TaskSnapshot.__(this.storage, snapshotDelegate), T.TaskSnapshotPlatformLToTaskSnapshotL()));
+    }
+    get snapshot() {
+      return new firebase_storage.TaskSnapshot.__(this.storage, this[_delegate$].snapshot);
+    }
+    pause() {
+      return this[_delegate$].pause();
+    }
+    resume() {
+      return this[_delegate$].resume();
+    }
+    cancel() {
+      return this[_delegate$].cancel();
+    }
+    asStream() {
+      return this[_delegate$].onComplete.asStream().map(T.TaskSnapshotL(), dart.fn(_ => this.snapshot, T.TaskSnapshotPlatformLToTaskSnapshotL()));
+    }
+    catchError(onError, opts) {
+      let test = opts && 'test' in opts ? opts.test : null;
+      return async.async(T.TaskSnapshotL(), (function* catchError() {
+        yield this[_delegate$].onComplete.catchError(onError, {test: test});
+        return this.snapshot;
+      }).bind(this));
+    }
+    then(S, onValue, opts) {
+      let onError = opts && 'onError' in opts ? opts.onError : null;
+      return this[_delegate$].onComplete.then(dart.legacy(S), dart.fn(_ => onValue(this.snapshot), dart.fnType(dart.legacy(async.FutureOr$(dart.legacy(S))), [T.TaskSnapshotPlatformL()])), {onError: onError});
+    }
+    whenComplete(action) {
+      return async.async(T.TaskSnapshotL(), (function* whenComplete() {
+        yield this[_delegate$].onComplete.whenComplete(action);
+        return this.snapshot;
+      }).bind(this));
+    }
+    timeout(timeLimit, opts) {
+      let onTimeout = opts && 'onTimeout' in opts ? opts.onTimeout : null;
+      T.VoidToLFutureOrLOfTaskSnapshotL().as(onTimeout);
+      return this[_delegate$].onComplete.then(T.TaskSnapshotL(), dart.fn(_ => this.snapshot, T.TaskSnapshotPlatformLToTaskSnapshotL())).timeout(timeLimit, {onTimeout: onTimeout});
+    }
+  };
+  (firebase_storage.Task.__ = function(storage, _delegate) {
+    this[storage$1] = storage;
+    this[_delegate$] = _delegate;
+    platform_interface_task.TaskPlatform.verifyExtends(this[_delegate$]);
+  }).prototype = firebase_storage.Task.prototype;
+  firebase_storage.Task.prototype[dart.isFuture] = true;
+  dart.addTypeTests(firebase_storage.Task);
+  dart.addTypeCaches(firebase_storage.Task);
+  firebase_storage.Task[dart.implements] = () => [async.Future$(dart.legacy(firebase_storage.TaskSnapshot))];
+  dart.setMethodSignature(firebase_storage.Task, () => ({
+    __proto__: dart.getMethods(firebase_storage.Task.__proto__),
+    pause: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), []),
+    resume: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), []),
+    cancel: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), []),
+    asStream: dart.fnType(dart.legacy(async.Stream$(dart.legacy(firebase_storage.TaskSnapshot))), []),
+    catchError: dart.fnType(dart.legacy(async.Future$(dart.legacy(firebase_storage.TaskSnapshot))), [dart.legacy(core.Function)], {test: dart.legacy(dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]))}, {}),
+    then: dart.gFnType(S => [dart.legacy(async.Future$(dart.legacy(S))), [dart.legacy(dart.fnType(dart.legacy(async.FutureOr$(dart.legacy(S))), [dart.legacy(firebase_storage.TaskSnapshot)]))], {onError: dart.legacy(core.Function)}, {}]),
+    whenComplete: dart.fnType(dart.legacy(async.Future$(dart.legacy(firebase_storage.TaskSnapshot))), [dart.legacy(dart.fnType(dart.dynamic, []))]),
+    timeout: dart.fnType(dart.legacy(async.Future$(dart.legacy(firebase_storage.TaskSnapshot))), [dart.legacy(core.Duration)], {onTimeout: dart.legacy(core.Object)}, {})
+  }));
+  dart.setGetterSignature(firebase_storage.Task, () => ({
+    __proto__: dart.getGetters(firebase_storage.Task.__proto__),
+    snapshotEvents: dart.legacy(async.Stream$(dart.legacy(firebase_storage.TaskSnapshot))),
+    snapshot: dart.legacy(firebase_storage.TaskSnapshot)
+  }));
+  dart.setLibraryUri(firebase_storage.Task, I[1]);
+  dart.setFieldSignature(firebase_storage.Task, () => ({
+    __proto__: dart.getFields(firebase_storage.Task.__proto__),
+    [_delegate$]: dart.fieldType(dart.legacy(platform_interface_task.TaskPlatform)),
+    storage: dart.finalFieldType(dart.legacy(firebase_storage.FirebaseStorage))
+  }));
+  firebase_storage.UploadTask = class UploadTask extends firebase_storage.Task {};
+  (firebase_storage.UploadTask.__ = function(storage, delegate) {
+    firebase_storage.UploadTask.__proto__.__.call(this, storage, delegate);
+    ;
+  }).prototype = firebase_storage.UploadTask.prototype;
+  dart.addTypeTests(firebase_storage.UploadTask);
+  dart.addTypeCaches(firebase_storage.UploadTask);
+  dart.setLibraryUri(firebase_storage.UploadTask, I[1]);
+  firebase_storage.DownloadTask = class DownloadTask extends firebase_storage.Task {};
+  (firebase_storage.DownloadTask.__ = function(storage, delegate) {
+    firebase_storage.DownloadTask.__proto__.__.call(this, storage, delegate);
+    ;
+  }).prototype = firebase_storage.DownloadTask.prototype;
+  dart.addTypeTests(firebase_storage.DownloadTask);
+  dart.addTypeCaches(firebase_storage.DownloadTask);
+  dart.setLibraryUri(firebase_storage.DownloadTask, I[1]);
+  var storage$2 = dart.privateName(firebase_storage, "TaskSnapshot.storage");
+  firebase_storage.TaskSnapshot = class TaskSnapshot extends core.Object {
+    get storage() {
+      return this[storage$2];
+    }
+    set storage(value) {
+      super.storage = value;
+    }
+    get bytesTransferred() {
+      return this[_delegate$].bytesTransferred;
+    }
+    get metadata() {
+      return this[_delegate$].metadata;
+    }
+    get ref() {
+      return new firebase_storage.Reference.__(this.storage, this[_delegate$].ref);
+    }
+    get state() {
+      return this[_delegate$].state;
+    }
+    get totalBytes() {
+      return this[_delegate$].totalBytes;
+    }
+    _equals(o) {
+      if (o == null) return false;
+      return T.TaskSnapshotL().is(o) && dart.equals(o.ref, this.ref) && dart.equals(o.storage, this.storage);
+    }
+    get hashCode() {
+      return hash.hash2(this.storage, this.ref);
+    }
+    toString() {
+      return dart.str(dart.wrapType(firebase_storage.TaskSnapshot)) + "(ref: " + dart.str(this.ref) + ", state: " + dart.str(this.state) + ")";
+    }
+  };
+  (firebase_storage.TaskSnapshot.__ = function(storage, _delegate) {
+    this[storage$2] = storage;
+    this[_delegate$] = _delegate;
+    if (!(this[_delegate$] != null)) dart.assertFailed(null, I[3], 15, 12, "_delegate != null");
+    platform_interface_task_snapshot.TaskSnapshotPlatform.verifyExtends(this[_delegate$]);
+  }).prototype = firebase_storage.TaskSnapshot.prototype;
+  dart.addTypeTests(firebase_storage.TaskSnapshot);
+  dart.addTypeCaches(firebase_storage.TaskSnapshot);
+  dart.setMethodSignature(firebase_storage.TaskSnapshot, () => ({
+    __proto__: dart.getMethods(firebase_storage.TaskSnapshot.__proto__),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.dynamic]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.dynamic]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setGetterSignature(firebase_storage.TaskSnapshot, () => ({
+    __proto__: dart.getGetters(firebase_storage.TaskSnapshot.__proto__),
+    bytesTransferred: dart.legacy(core.int),
+    metadata: dart.legacy(full_metadata.FullMetadata),
+    ref: dart.legacy(firebase_storage.Reference),
+    state: dart.legacy(task_state.TaskState),
+    totalBytes: dart.legacy(core.int),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(firebase_storage.TaskSnapshot, I[1]);
+  dart.setFieldSignature(firebase_storage.TaskSnapshot, () => ({
+    __proto__: dart.getFields(firebase_storage.TaskSnapshot.__proto__),
+    [_delegate$]: dart.fieldType(dart.legacy(platform_interface_task_snapshot.TaskSnapshotPlatform)),
+    storage: dart.finalFieldType(dart.legacy(firebase_storage.FirebaseStorage))
+  }));
+  dart.defineExtensionMethods(firebase_storage.TaskSnapshot, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(firebase_storage.TaskSnapshot, ['hashCode']);
+  firebase_storage._throwNoBucketError = function _throwNoBucketError(message) {
+    dart.throw(new firebase_core_platform_interface.FirebaseException.new({plugin: "firebase_storage", code: "no-bucket", message: message}));
+  };
+  dart.trackLibraries("packages/firebase_storage/firebase_storage.dart", {
+    "package:firebase_storage/firebase_storage.dart": firebase_storage
+  }, {
+    "package:firebase_storage/firebase_storage.dart": ["src/firebase_storage.dart", "src/reference.dart", "src/list_result.dart", "src/task.dart", "src/task_snapshot.dart"]
+  }, '{"version":3,"sourceRoot":"","sources":["src/firebase_storage.dart","src/reference.dart","src/list_result.dart","src/task.dart","src/task_snapshot.dart"],"names":[],"mappings":"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","file":"../../../../../../packages/firebase_storage/firebase_storage.dart.lib.js"}');
+  // Exports:
+  return {
+    firebase_storage: firebase_storage
+  };
+}));
+
+//# sourceMappingURL=firebase_storage.dart.lib.js.map

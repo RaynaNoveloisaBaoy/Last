@@ -1,0 +1,809 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/intro_slider/slide_object.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/box_fit.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/rendering/paragraph.dart', 'packages/intro_slider/intro_slider.dart', 'packages/intro_slider/dot_animation_enum.dart', 'packages/wap/login_page.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/animation/curves.dart'], (function load__packages__wap__welcome_slider_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__intro_slider__slide_object$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__box_fit$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__rendering__paragraph$46dart, packages__intro_slider__intro_slider$46dart, packages__intro_slider__dot_animation_enum$46dart, packages__wap__login_page$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__animation__curves$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const scroll_physics = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scroll_physics;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const pages = packages__flutter__src__widgets__widget_span$46dart.src__widgets__pages;
+  const transitions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__transitions;
+  const slide_object = packages__intro_slider__slide_object$46dart.slide_object;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const paragraph = packages__flutter__src__rendering__paragraph$46dart.src__rendering__paragraph;
+  const intro_slider = packages__intro_slider__intro_slider$46dart.intro_slider;
+  const dot_animation_enum = packages__intro_slider__dot_animation_enum$46dart.dot_animation_enum;
+  const login_page = packages__wap__login_page$46dart.login_page;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const tween$ = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  var welcome_slider = Object.create(dart.library);
+  var $add = dartx.add;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    SlideL: () => (T.SlideL = dart.constFn(dart.legacy(slide_object.Slide)))(),
+    JSArrayOfSlideL: () => (T.JSArrayOfSlideL = dart.constFn(_interceptors.JSArray$(T.SlideL())))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    LoginPageL: () => (T.LoginPageL = dart.constFn(dart.legacy(login_page.LoginPage)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    AnimationOfdoubleL: () => (T.AnimationOfdoubleL = dart.constFn(animation.Animation$(T.doubleL())))(),
+    AnimationLOfdoubleL: () => (T.AnimationLOfdoubleL = dart.constFn(dart.legacy(T.AnimationOfdoubleL())))(),
+    BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToLoginPageL: () => (T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToLoginPageL = dart.constFn(dart.fnType(T.LoginPageL(), [T.BuildContextL(), T.AnimationLOfdoubleL(), T.AnimationLOfdoubleL()])))(),
+    OffsetL: () => (T.OffsetL = dart.constFn(dart.legacy(ui.Offset)))(),
+    TweenOfOffsetL: () => (T.TweenOfOffsetL = dart.constFn(tween$.Tween$(T.OffsetL())))(),
+    SlideTransitionL: () => (T.SlideTransitionL = dart.constFn(dart.legacy(transitions.SlideTransition)))(),
+    BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleL__ToSlideTransitionL: () => (T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleL__ToSlideTransitionL = dart.constFn(dart.fnType(T.SlideTransitionL(), [T.BuildContextL(), T.AnimationLOfdoubleL(), T.AnimationLOfdoubleL(), T.WidgetL()])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "name",
+        [_Location_column]: 34,
+        [_Location_line]: 68,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "matchTextDirection",
+        [_Location_column]: 21,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fit",
+        [_Location_column]: 21,
+        [_Location_line]: 70,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 21,
+        [_Location_line]: 71,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 67,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 19,
+        [_Location_line]: 62,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 19,
+        [_Location_line]: 63,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 67,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10], T._LocationL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 61,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 19,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([C[13] || CT.C13], T._LocationL());
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[12] || CT.C12,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 74,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 34,
+        [_Location_line]: 79,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 21,
+        [_Location_line]: 80,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.constList([C[16] || CT.C16, C[17] || CT.C17], T._LocationL());
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[15] || CT.C15,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 78,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 78,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 77,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 34,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 21,
+        [_Location_line]: 92,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 21,
+        [_Location_line]: 98,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 21,
+        [_Location_line]: 99,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24, C[25] || CT.C25, C[26] || CT.C26], T._LocationL());
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 90,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 19,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 90,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 19,
+        [_Location_line]: 101,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.constList([C[29] || CT.C29, C[30] || CT.C30, C[31] || CT.C31], T._LocationL());
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[28] || CT.C28,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 86,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 15,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 15,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 15,
+        [_Location_line]: 60,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.constList([C[34] || CT.C34, C[35] || CT.C35, C[36] || CT.C36], T._LocationL());
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[33] || CT.C33,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 57,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 13,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39, C[40] || CT.C40], T._LocationL());
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 55,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 11,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 11,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.constList([C[43] || CT.C43, C[44] || CT.C44, C[45] || CT.C45], T._LocationL());
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[42] || CT.C42,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 27,
+        [_Location_line]: 120,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.constList([C[48] || CT.C48], T._LocationL());
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[47] || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 120,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 9,
+        [_Location_line]: 122,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 9,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51, C[52] || CT.C52], T._LocationL());
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 121,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 9,
+        [_Location_line]: 126,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 9,
+        [_Location_line]: 127,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.constList([C[55] || CT.C55, C[56] || CT.C56], T._LocationL());
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[54] || CT.C54,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 125,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColorAllSlides",
+        [_Location_column]: 7,
+        [_Location_line]: 119,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "renderSkipBtn",
+        [_Location_column]: 7,
+        [_Location_line]: 120,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "renderNextBtn",
+        [_Location_column]: 7,
+        [_Location_line]: 121,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "renderDoneBtn",
+        [_Location_column]: 7,
+        [_Location_line]: 125,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "colorDoneBtn",
+        [_Location_column]: 7,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "colorActiveDot",
+        [_Location_column]: 7,
+        [_Location_line]: 130,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "sizeDot",
+        [_Location_column]: 7,
+        [_Location_line]: 131,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "typeDotAnimation",
+        [_Location_column]: 7,
+        [_Location_line]: 132,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "listCustomTabs",
+        [_Location_column]: 7,
+        [_Location_line]: 133,
+        [_Location_file]: null
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "scrollPhysics",
+        [_Location_column]: 7,
+        [_Location_line]: 134,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shouldHideStatusBar",
+        [_Location_column]: 7,
+        [_Location_line]: 135,
+        [_Location_file]: null
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onDonePress",
+        [_Location_column]: 7,
+        [_Location_line]: 136,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.constList([C[59] || CT.C59, C[60] || CT.C60, C[61] || CT.C61, C[62] || CT.C62, C[63] || CT.C63, C[64] || CT.C64, C[65] || CT.C65, C[66] || CT.C66, C[67] || CT.C67, C[68] || CT.C68, C[69] || CT.C69, C[70] || CT.C70], T._LocationL());
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[58] || CT.C58,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 118,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C72() {
+      return C[72] = dart.constList([], T._LocationL());
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[72] || CT.C72,
+        [_Location_name]: null,
+        [_Location_column]: 62,
+        [_Location_line]: 145,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "position",
+        [_Location_column]: 9,
+        [_Location_line]: 154,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 155,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.constList([C[75] || CT.C75, C[76] || CT.C76], T._LocationL());
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[74] || CT.C74,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 153,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/welcome_slider.dart"
+      });
+    }
+  }, false);
+  var C = Array(77).fill(void 0);
+  var I = ["package:wap/welcome_slider.dart"];
+  welcome_slider.WelcomeSliderPage = class WelcomeSliderPage extends framework.StatefulWidget {
+    createState() {
+      return new welcome_slider._WelcomeSliderPageState.new();
+    }
+  };
+  (welcome_slider.WelcomeSliderPage.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    welcome_slider.WelcomeSliderPage.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = welcome_slider.WelcomeSliderPage.prototype;
+  dart.addTypeTests(welcome_slider.WelcomeSliderPage);
+  dart.addTypeCaches(welcome_slider.WelcomeSliderPage);
+  dart.setMethodSignature(welcome_slider.WelcomeSliderPage, () => ({
+    __proto__: dart.getMethods(welcome_slider.WelcomeSliderPage.__proto__),
+    createState: dart.fnType(dart.legacy(welcome_slider._WelcomeSliderPageState), [])
+  }));
+  dart.setLibraryUri(welcome_slider.WelcomeSliderPage, I[0]);
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  welcome_slider._WelcomeSliderPageState = class _WelcomeSliderPageState extends framework.State$(dart.legacy(welcome_slider.WelcomeSliderPage)) {
+    initState() {
+      super.initState();
+      this.slides[$add](new slide_object.Slide.new({title: "Welcome to WAP App", description: "Hello there! We are pleased to meet you and excited for you to meet loving pets." + "\n" + "But first let us learn about our WAP vision and mission", pathImage: "assets/images/wap_logo.png"}));
+      this.slides[$add](new slide_object.Slide.new({title: "Mission", description: "WAP Application aims to create a virtual community that ensures the protection and welfare of cats and dogs by helping them find secure and responsible adoptive homes.", pathImage: "assets/images/4.png"}));
+      this.slides[$add](new slide_object.Slide.new({title: "Vision", description: "Imagine a world in which every single pet can have the best protection and welfare that they deserve. That’s our commitment.", pathImage: "assets/images/5.png"}));
+    }
+    renderListCustomTabs() {
+      let tabs = T.JSArrayOfWidgetL().of([]);
+      for (let i = 0; i < dart.notNull(this.slides[$length]); i = i + 1) {
+        let currentSlide = this.slides[$_get](i);
+        tabs[$add](new container.Container.new({width: 1 / 0, height: 1 / 0, child: new container.Container.new({margin: new edge_insets.EdgeInsets.only({bottom: 160.0, top: 60.0}), child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidgetL().of([new container.Container.new({padding: new edge_insets.EdgeInsets.all(5.0), decoration: new box_decoration.BoxDecoration.new({shape: box_border.BoxShape.circle, color: colors.Colors.teal._get(200)}), child: new image.Image.asset(currentSlide.pathImage, {matchTextDirection: true, fit: box_fit.BoxFit.fill, height: 150.0, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[11] || CT.C11}), new container.Container.new({child: new text.Text.new(currentSlide.title, {style: new text_style.TextStyle.new({color: colors.Colors.white, fontSize: 35.0, fontFamily: "Fredoka One"}), $creationLocationd_0dea112b090073317d4: C[14] || CT.C14}), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), new container.Container.new({padding: new edge_insets.EdgeInsets.symmetric({horizontal: 30.0}), child: new text.Text.new(currentSlide.description, {style: new text_style.TextStyle.new({color: colors.Colors.white, fontSize: 20.0, height: 1.5, fontFamily: "Montserrat"}), textAlign: ui.TextAlign.center, overflow: paragraph.TextOverflow.clip, $creationLocationd_0dea112b090073317d4: C[21] || CT.C21}), margin: new edge_insets.EdgeInsets.only({top: 15.0, left: 20.0, right: 20.0}), $creationLocationd_0dea112b090073317d4: C[27] || CT.C27})]), $creationLocationd_0dea112b090073317d4: C[32] || CT.C32}), $creationLocationd_0dea112b090073317d4: C[37] || CT.C37}), $creationLocationd_0dea112b090073317d4: C[41] || CT.C41}));
+      }
+      return tabs;
+    }
+    build(context) {
+      return new intro_slider.IntroSlider.new({backgroundColorAllSlides: colors.Colors.teal._get(400), renderSkipBtn: new text.Text.new("Skip", {$creationLocationd_0dea112b090073317d4: C[46] || CT.C46}), renderNextBtn: new text.Text.new("Next", {style: new text_style.TextStyle.new({color: colors.Colors.green._get(700)}), $creationLocationd_0dea112b090073317d4: C[49] || CT.C49}), renderDoneBtn: new text.Text.new("Done", {style: new text_style.TextStyle.new({color: colors.Colors.green._get(700)}), $creationLocationd_0dea112b090073317d4: C[53] || CT.C53}), colorDoneBtn: colors.Colors.white, colorActiveDot: colors.Colors.white, sizeDot: 8.0, typeDotAnimation: dot_animation_enum.dotSliderAnimation.SIZE_TRANSITION, listCustomTabs: this.renderListCustomTabs(), scrollPhysics: new scroll_physics.BouncingScrollPhysics.new(), shouldHideStatusBar: false, onDonePress: dart.fn(() => {
+          navigator.Navigator.of(context).push(dart.dynamic, welcome_slider._createRoute());
+        }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[57] || CT.C57});
+    }
+  };
+  (welcome_slider._WelcomeSliderPageState.new = function() {
+    this.slides = T.JSArrayOfSlideL().of([]);
+    welcome_slider._WelcomeSliderPageState.__proto__.new.call(this);
+    ;
+  }).prototype = welcome_slider._WelcomeSliderPageState.prototype;
+  dart.addTypeTests(welcome_slider._WelcomeSliderPageState);
+  dart.addTypeCaches(welcome_slider._WelcomeSliderPageState);
+  dart.setMethodSignature(welcome_slider._WelcomeSliderPageState, () => ({
+    __proto__: dart.getMethods(welcome_slider._WelcomeSliderPageState.__proto__),
+    renderListCustomTabs: dart.fnType(dart.legacy(core.List$(dart.legacy(framework.Widget))), []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(welcome_slider._WelcomeSliderPageState, I[0]);
+  dart.setFieldSignature(welcome_slider._WelcomeSliderPageState, () => ({
+    __proto__: dart.getFields(welcome_slider._WelcomeSliderPageState.__proto__),
+    slides: dart.fieldType(dart.legacy(core.List$(dart.legacy(slide_object.Slide))))
+  }));
+  welcome_slider._createRoute = function _createRoute() {
+    return new pages.PageRouteBuilder.new({pageBuilder: dart.fn((context, animation, secondaryAnimation) => new login_page.LoginPage.new({$creationLocationd_0dea112b090073317d4: C[71] || CT.C71}), T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToLoginPageL()), transitionsBuilder: dart.fn((context, animation, secondaryAnimation, child) => {
+        let begin = new ui.Offset.new(0.0, 1.0);
+        let end = ui.Offset.zero;
+        let curve = curves.Curves.ease;
+        let tween = new (T.TweenOfOffsetL()).new({begin: begin, end: end}).chain(new tween$.CurveTween.new({curve: curve}));
+        return new transitions.SlideTransition.new({position: animation.drive(T.OffsetL(), tween), child: child, $creationLocationd_0dea112b090073317d4: C[73] || CT.C73});
+      }, T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleL__ToSlideTransitionL())});
+  };
+  dart.trackLibraries("packages/wap/welcome_slider.dart", {
+    "package:wap/welcome_slider.dart": welcome_slider
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["welcome_slider.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAQ2C;IAAyB;;;;;;EACpE;;;;;;;;;;;;;;;AAOqB,MAAX;AAUL,MATD,AAAO,kBACD,mCACK,mCACI,AACP,qFACA,OACA,sEACO;AAUd,MAPD,AAAO,kBACD,mCACK,wBAEH,sLACO;AAUd,MAPD,AAAO,kBACD,mCACK,uBAEH,2IACO;IAGjB;;AAGe,iBAAO;AAEpB,eAAS,IAAI,GAAG,AAAE,CAAD,gBAAG,AAAO,uBAAQ,IAAA,AAAC,CAAA;AAC5B,2BAAe,AAAM,mBAAC,CAAC;AA6D5B,QA5DD,AAAK,IAAD,OACF,iEAGS,qCACc,yCAAa,YAAU,eACnC,yCACgC,mDACE,0CAC7B,yBACR,sCACsB,+BAAI,kBACZ,6CACM,mCACF,AAAI,wBAAC,eAER,sBACX,AAAa,YAAD,iCACQ,WACR,6BACJ,yHAGZ,gCACU,iEAEV,oCACS,kBACL,AAAa,YAAD,gBACL,qCACW,+BACJ,kBACE,uIAGpB,sCACsB,kDACN,eAEP,kBACL,AAAa,YAAD,sBACL,qCACS,+BACJ,cACF,iBACI,2BAEO,+BACE,gGAEN,sCACZ,YACC,aACC;;AASvB,YAAO,KAAI;IACb;UAG0B;AACxB,YAAO,6DAC4B,AAAI,wBAAC,qBACvB,kBAAK,mFACL,kBACb,gBACO,qCAAwB,AAAK,yBAAC,kFAExB,kBACb,gBACO,qCAAwB,AAAK,yBAAC,iFAElB,qCACE,8BACd,uBAC4B,uEACrB,AAAK,4CACN,qEACM,oBACR;AAC+B,UAAhC,AAAY,uBAAT,OAAO,qBAAO;;IAGjC;;;IA/HY,cAAS;;;EAgIvB;;;;;;;;;;;;;;AAGE,UAAO,8CACQ,SAAC,SAAS,WAAW,uBAAuB,yLACrC,SAAC,SAAS,WAAW,oBAAoB;AACvD,oBAAQ,kBAAO,KAAK;AACpB,kBAAa;AACb,oBAAe;AAEf,oBAAQ,AAA8B,qCAAjB,KAAK,OAAO,GAAG,SAAQ,kCAAkB,KAAK;AAEvE,cAAO,gDACK,AAAU,SAAD,oBAAO,KAAK,UACxB,KAAK;;EAIpB","file":"../../../../../../../../packages/wap/welcome_slider.dart.lib.js"}');
+  // Exports:
+  return {
+    welcome_slider: welcome_slider
+  };
+}));
+
+//# sourceMappingURL=welcome_slider.dart.lib.js.map

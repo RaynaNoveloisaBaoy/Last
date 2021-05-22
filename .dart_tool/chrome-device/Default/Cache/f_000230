@@ -1,0 +1,509 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/material/scrollbar.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/flutter/src/material/card.dart'], (function load__packages__wap__TermsAndConditions_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__material__scrollbar$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__flutter__src__material__card$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const scroll_controller = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scroll_controller;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const dialog = packages__flutter__src__material__icon_button$46dart.src__material__dialog;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const list_tile = packages__flutter__src__material__icon_button$46dart.src__material__list_tile;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const scrollbar = packages__flutter__src__material__scrollbar$46dart.src__material__scrollbar;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const card = packages__flutter__src__material__card$46dart.src__material__card;
+  var TermsAndConditions = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    CardL: () => (T.CardL = dart.constFn(dart.legacy(card.Card)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    BuildContextLAndintLToCardL: () => (T.BuildContextLAndintLToCardL = dart.constFn(dart.fnType(T.CardL(), [T.BuildContextL(), T.intL()])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 25,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 11,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5], T._LocationL());
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[2] || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/TermsAndConditions.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: ui.TextAlign.prototype,
+        [_name]: "TextAlign.center",
+        index: 2
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: ui.FontWeight.prototype,
+        [FontWeight_index]: 3
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294967295.0
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: C[8] || CT.C8,
+        [TextStyle_fontSize]: 35,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: "Fredoka One",
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[9] || CT.C9,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget__location]: C[1] || CT.C1,
+        [Widget_key]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: C[6] || CT.C6,
+        [Text_strutStyle]: null,
+        [Text_style]: C[7] || CT.C7,
+        [Text_textSpan]: null,
+        [Text_data]: "Terms And Conditions"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 33,
+        [_Location_line]: 65,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 23,
+        [_Location_line]: 66,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 23,
+        [_Location_line]: 71,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14], T._LocationL());
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 65,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/TermsAndConditions.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 21,
+        [_Location_line]: 65,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([C[17] || CT.C17], T._LocationL());
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 64,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/TermsAndConditions.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 64,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 63,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/TermsAndConditions.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 17,
+        [_Location_line]: 60,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemCount",
+        [_Location_column]: 17,
+        [_Location_line]: 61,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 17,
+        [_Location_line]: 62,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24, C[25] || CT.C25], T._LocationL());
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 59,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/TermsAndConditions.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "isAlwaysShown",
+        [_Location_column]: 13,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 13,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.constList([C[28] || CT.C28, C[29] || CT.C29, C[30] || CT.C30], T._LocationL());
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 56,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/TermsAndConditions.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33], T._LocationL());
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 54,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/TermsAndConditions.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 9,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/TermsAndConditions.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 7,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 7,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "content",
+        [_Location_column]: 7,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39, C[40] || CT.C40, C[41] || CT.C41], T._LocationL());
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/Lau/Desktop/WAP%20APP%20PROJECT/PROJECT/SPRINT%203/WAP-master/lib/TermsAndConditions.dart"
+      });
+    }
+  }, false);
+  var C = Array(42).fill(void 0);
+  var I = ["package:wap/TermsAndConditions.dart"];
+  var pdfText = dart.privateName(TermsAndConditions, "TermsAndConditions.pdfText");
+  var _scrollController = dart.privateName(TermsAndConditions, "_scrollController");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var Text_textHeightBehavior = dart.privateName(text, "Text.textHeightBehavior");
+  var Text_textWidthBasis = dart.privateName(text, "Text.textWidthBasis");
+  var Text_semanticsLabel = dart.privateName(text, "Text.semanticsLabel");
+  var Text_maxLines = dart.privateName(text, "Text.maxLines");
+  var Text_textScaleFactor = dart.privateName(text, "Text.textScaleFactor");
+  var Text_overflow = dart.privateName(text, "Text.overflow");
+  var Text_softWrap = dart.privateName(text, "Text.softWrap");
+  var Text_locale = dart.privateName(text, "Text.locale");
+  var Text_textDirection = dart.privateName(text, "Text.textDirection");
+  var _name = dart.privateName(ui, "_name");
+  var Text_textAlign = dart.privateName(text, "Text.textAlign");
+  var Text_strutStyle = dart.privateName(text, "Text.strutStyle");
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var FontWeight_index = dart.privateName(ui, "FontWeight.index");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
+  var Text_style = dart.privateName(text, "Text.style");
+  var Text_textSpan = dart.privateName(text, "Text.textSpan");
+  var Text_data = dart.privateName(text, "Text.data");
+  TermsAndConditions.TermsAndConditions = class TermsAndConditions extends framework.StatelessWidget {
+    get pdfText() {
+      return this[pdfText];
+    }
+    set pdfText(value) {
+      super.pdfText = value;
+    }
+    build(context) {
+      return new dialog.AlertDialog.new({title: C[0] || CT.C0, backgroundColor: colors.Colors.teal._get(400), content: new scaffold.Scaffold.new({body: new basic.Center.new({child: new scrollbar.Scrollbar.new({isAlwaysShown: true, controller: this[_scrollController], child: new scroll_view.ListView.builder({controller: this[_scrollController], itemCount: 1, itemBuilder: dart.fn((context, index) => new card.Card.new({child: new list_tile.ListTile.new({title: new text.Text.new(this.pdfText, {style: new text_style.TextStyle.new({color: colors.Colors.black87, fontSize: 12.0, fontWeight: ui.FontWeight.normal, fontFamily: "Montserrat"}), textAlign: ui.TextAlign.justify, $creationLocationd_0dea112b090073317d4: C[10] || CT.C10}), $creationLocationd_0dea112b090073317d4: C[15] || CT.C15}), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), T.BuildContextLAndintLToCardL()), $creationLocationd_0dea112b090073317d4: C[21] || CT.C21}), $creationLocationd_0dea112b090073317d4: C[26] || CT.C26}), $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34}), $creationLocationd_0dea112b090073317d4: C[37] || CT.C37});
+    }
+  };
+  (TermsAndConditions.TermsAndConditions.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[pdfText] = "These terms and conditions set forth the general terms and conditions of your use of the \"We Adopt Pets\" mobile application or WAP App and any of its related products and services. By accessing and using the Mobile Application and Services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Agreement. If you do not agree with the terms of this Agreement, you must not accept this Agreement and may not access and use the WAP App and Services. You acknowledge that this Agreement is a contract between you and the Operator, even though it is electronic and is not physically signed by you, and it governs your use of the Mobile Application and Services. \n\n\nACCOUNTS AND MEMBERSHIP\nIf you create an account in the WAP App, you are responsible for maintaining the security of your account and you are fully responsible for all activities that occur under the account and any other actions taken in connection with it. We may, but have no obligation to, monitor and review new accounts before you may sign in and start using the Services. Providing false contact information of any kind may cause the termination of your account. You must immediately notify us of any unauthorized uses of your account or any other breaches of security. We will not be liable for any acts or omissions by you, including any damages of any kind incurred because of such acts or omissions. We may suspend, disable, or delete your account (or any part thereof) if we determine that you have violated any provision of this agreement or that your conduct or content would damage our reputation and goodwill. If we delete your account for the foregoing reasons, you may not re-register for our Services. We may block your email address and Internet protocol address to prevent further registration.\n\n\nUSER CONTENT\nWe do not own any data, information or content that you submit in the WAP App in the course of using the Service. You shall have sole responsibility for the accuracy, quality, integrity, legality, reliability, appropriateness, and intellectual property ownership or right to use of all submitted Content. We may monitor and review the Content in the WAP App submitted or created using our Services by you. You grant us permission to access, copy, distribute, store, transmit, reformat, display and perform the Content of your user account solely as required for the purpose of providing the Services to you. Without limiting any of those representations or warranties, we have the right, though not the obligation, to, in our own sole discretion, refuse or remove any Content that, in our reasonable opinion, violates any of our policies or is in any way harmful or objectionable. Unless specifically permitted by you, your use of the WAP App and Services does not grant us the license to use, reproduce, adapt, modify, publish or distribute the Content created by you or stored in your user account for commercial, marketing or any similar purpose.\n\n\nBACKUPS\nWe perform regular backups of the Content and will do our best to ensure completeness and accuracy of these backups. In the event of the hardware failure or data loss we will restore backups automatically to minimize the impact and downtime.\n\n\nPROHIBITED USES\nIn addition to other terms as set forth in the Agreement, you are prohibited from using the Mobile Application and Services or Content: (a) for any unlawful purpose; (b) to solicit others to perform or participate in any unlawful acts; (c) to violate any international, federal, provincial or state regulations, rules, laws, or local ordinances; (d) to infringe upon or violate our intellectual property rights or the intellectual property rights of others; (e) to harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate based on gender, sexual orientation, religion, ethnicity, race, age, national origin, or disability; (f) to submit false or misleading information; (g) to upload or transmit viruses or any other type of malicious code that will or may be used in any way that will affect the functionality or operation of the Mobile Application and Services, third-party products and services, or the Internet; (h) to spam, phish, pharm, pretext, spider, crawl, or scrape; (i) for any obscene or immoral purpose; or (j) to interfere with or circumvent the security features of the Mobile Application and Services. We reserve the right to end your use of the WAP App  and Services for violating any of the prohibited uses.\n\n\nINTELLECTUAL PROPERTY RIGHTS\n\"Intellectual Property Rights\" means all present and future rights conferred by statute, common law or equity in or in relation to any copyright and related rights, trademarks, designs, patents, inventions, goodwill and the right to sue for passing off, rights to inventions, rights to use, and all other intellectual property rights, in each case whether registered or unregistered and including all applications and rights to apply for and be granted, rights to claim priority from, such rights and all similar or equivalent rights or forms of protection and any other results of intellectual activity which subsist or will subsist now or in the future in any part of the world. This Agreement does not transfer to you any intellectual property owned by the Operator or third parties, and all rights, titles, and interests in and to such property will remain solely with the Operator. All trademarks, service marks, graphics and logos used in connection with the Mobile Application and Services, are trademarks or registered trademarks of the Operator or its licensors. Other trademarks, service marks, graphics and logos used in connection with the WAP App and Services may be the trademarks of other third parties. Your use of the Mobile Application and Services grants you no right or license to reproduce or otherwise use any of the Operator or third party trademarks.\n\n\nLIMITATION OF LIABILITY\nTo the fullest extent permitted by applicable law, in no event will the Operator, its affiliates, or licensors be liable to any person for any indirect, incidental, special, punitive, cover or consequential damages (including, without limitation, damages for use of content) however caused, under any theory of liability, including, without limitation, contract, tort, warranty, breach of statutory duty, negligence or otherwise, even if the liable party has been advised as to the possibility of such damages or could have foreseen such damages. The limitations and exclusions also apply if this remedy does not fully compensate you for any losses or fails of its essential purpose.\n\n\nCHANGES AND AMENDMENTS\nWe reserve the right to modify this Agreement or its terms relating to the WAP App and Services at any time, effective upon posting of an updated version of this Agreement in the WAP App. When we do, we will send you an email to notify you. Continued use of the WAP App and Services after any such changes shall constitute your consent to such changes.\n\n\nCONTACT US\nIf you would like to contact us to understand more about this Agreement or wish to contact us concerning any matter relating to it, you may send an email to aosurez@up.edu.ph.\nThis document was last updated on March 22, 2021\n";
+    this[_scrollController] = new scroll_controller.ScrollController.new();
+    TermsAndConditions.TermsAndConditions.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = TermsAndConditions.TermsAndConditions.prototype;
+  dart.addTypeTests(TermsAndConditions.TermsAndConditions);
+  dart.addTypeCaches(TermsAndConditions.TermsAndConditions);
+  dart.setMethodSignature(TermsAndConditions.TermsAndConditions, () => ({
+    __proto__: dart.getMethods(TermsAndConditions.TermsAndConditions.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(TermsAndConditions.TermsAndConditions, I[0]);
+  dart.setFieldSignature(TermsAndConditions.TermsAndConditions, () => ({
+    __proto__: dart.getFields(TermsAndConditions.TermsAndConditions.__proto__),
+    pdfText: dart.finalFieldType(dart.legacy(core.String)),
+    [_scrollController]: dart.finalFieldType(dart.legacy(scroll_controller.ScrollController))
+  }));
+  dart.trackLibraries("packages/wap/TermsAndConditions.dart", {
+    "package:wap/TermsAndConditions.dart": TermsAndConditions
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["TermsAndConditions.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAMa;;;;;;UA+Be;AACtB,YAAW,oEAYa,AAAI,wBAAC,eACpB,iCAED,6BAEK,4CACQ,kBACH,gCACI,8CACA,oCACD,gBACE,SAAC,SAAS,UACd,0BACE,mCACA,kBAAK,sBACH,qCACO,iCACJ,kBACa,kCACX,2BACS;IASvC;;;;IAzES,gBAAU;IA6BE,0BAAoB;;;EA6C3C","file":"../../../../../../../../packages/wap/TermsAndConditions.dart.lib.js"}');
+  // Exports:
+  return {
+    TermsAndConditions: TermsAndConditions
+  };
+}));
+
+//# sourceMappingURL=TermsAndConditions.dart.lib.js.map

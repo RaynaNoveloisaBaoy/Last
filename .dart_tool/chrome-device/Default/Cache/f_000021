@@ -1,0 +1,1356 @@
+define(['dart_sdk', 'packages/intl/date_symbols.dart', 'packages/intl/src/plural_rules.dart', 'packages/intl/number_symbols.dart', 'packages/intl/number_symbols_data.dart'], (function load__packages__intl__src__intl_helpers_dart(dart_sdk, packages__intl__date_symbols$46dart, packages__intl__src__plural_rules$46dart, packages__intl__number_symbols$46dart, packages__intl__number_symbols_data$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const async = dart_sdk.async;
+  const _internal = dart_sdk._internal;
+  const _js_helper = dart_sdk._js_helper;
+  const convert = dart_sdk.convert;
+  const math = dart_sdk.math;
+  const collection = dart_sdk.collection;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const date_symbols = packages__intl__date_symbols$46dart.date_symbols;
+  const plural_rules = packages__intl__src__plural_rules$46dart.src__plural_rules;
+  const number_symbols = packages__intl__number_symbols$46dart.number_symbols;
+  const number_symbols_data = packages__intl__number_symbols_data$46dart.number_symbols_data;
+  var intl_helpers = Object.create(dart.library);
+  var date_format_internal = Object.create(dart.library);
+  var intl = Object.create(dart.library);
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $toSet = dartx.toSet;
+  var $toList = dartx.toList;
+  var $sort = dartx.sort;
+  var $join = dartx.join;
+  var $add = dartx.add;
+  var $toString = dartx.toString;
+  var $substring = dartx.substring;
+  var $toLowerCase = dartx.toLowerCase;
+  var $_get = dartx._get;
+  var $toUpperCase = dartx.toUpperCase;
+  var $truncate = dartx.truncate;
+  var $last = dartx.last;
+  var $split = dartx.split;
+  var $skip = dartx.skip;
+  var $addAll = dartx.addAll;
+  var $replaceAll = dartx.replaceAll;
+  var $startsWith = dartx.startsWith;
+  var $isEmpty = dartx.isEmpty;
+  var $contains = dartx.contains;
+  var $first = dartx.first;
+  var $forEach = dartx.forEach;
+  var $reversed = dartx.reversed;
+  var $replaceFirst = dartx.replaceFirst;
+  var $trim = dartx.trim;
+  var $expand = dartx.expand;
+  var $endsWith = dartx.endsWith;
+  var $codeUnitAt = dartx.codeUnitAt;
+  var $round = dartx.round;
+  var $containsKey = dartx.containsKey;
+  var $floor = dartx.floor;
+  var $modulo = dartx['%'];
+  var $isInfinite = dartx.isInfinite;
+  var $isNaN = dartx.isNaN;
+  var $ceil = dartx.ceil;
+  var $times = dartx['*'];
+  var $toInt = dartx.toInt;
+  var $padLeft = dartx.padLeft;
+  var $every = dartx.every;
+  var $_set = dartx._set;
+  var $putIfAbsent = dartx.putIfAbsent;
+  var $codeUnits = dartx.codeUnits;
+  var $map = dartx.map;
+  var $length = dartx.length;
+  var $compareTo = dartx.compareTo;
+  var $keys = dartx.keys;
+  dart._checkModuleNullSafetyMode(false);
+  var T$ = {
+    StringL: () => (T$.StringL = dart.constFn(dart.legacy(core.String)))(),
+    JSArrayOfStringL: () => (T$.JSArrayOfStringL = dart.constFn(_interceptors.JSArray$(T$.StringL())))(),
+    ListOfStringL: () => (T$.ListOfStringL = dart.constFn(core.List$(T$.StringL())))(),
+    ListLOfStringL: () => (T$.ListLOfStringL = dart.constFn(dart.legacy(T$.ListOfStringL())))(),
+    boolL: () => (T$.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    UninitializedLocaleDataL: () => (T$.UninitializedLocaleDataL = dart.constFn(dart.legacy(intl_helpers.UninitializedLocaleData)))(),
+    MessageLookupL: () => (T$.MessageLookupL = dart.constFn(dart.legacy(intl_helpers.MessageLookup)))(),
+    UninitializedLocaleDataOfNull: () => (T$.UninitializedLocaleDataOfNull = dart.constFn(intl_helpers.UninitializedLocaleData$(core.Null)))(),
+    FutureL: () => (T$.FutureL = dart.constFn(dart.legacy(async.Future)))(),
+    DateSymbolsL: () => (T$.DateSymbolsL = dart.constFn(dart.legacy(date_symbols.DateSymbols)))(),
+    UninitializedLocaleDataOfDateSymbolsL: () => (T$.UninitializedLocaleDataOfDateSymbolsL = dart.constFn(intl_helpers.UninitializedLocaleData$(T$.DateSymbolsL())))(),
+    MapOfStringL$StringL: () => (T$.MapOfStringL$StringL = dart.constFn(core.Map$(T$.StringL(), T$.StringL())))(),
+    MapLOfStringL$StringL: () => (T$.MapLOfStringL$StringL = dart.constFn(dart.legacy(T$.MapOfStringL$StringL())))(),
+    UninitializedLocaleDataOfMapLOfStringL$StringL: () => (T$.UninitializedLocaleDataOfMapLOfStringL$StringL = dart.constFn(intl_helpers.UninitializedLocaleData$(T$.MapLOfStringL$StringL())))(),
+    StringLToStringL: () => (T$.StringLToStringL = dart.constFn(dart.fnType(T$.StringL(), [T$.StringL()])))(),
+    StringLToboolL: () => (T$.StringLToboolL = dart.constFn(dart.fnType(T$.boolL(), [T$.StringL()])))(),
+    PluralCaseL: () => (T$.PluralCaseL = dart.constFn(dart.legacy(plural_rules.PluralCase)))(),
+    VoidToPluralCaseL: () => (T$.VoidToPluralCaseL = dart.constFn(dart.fnType(T$.PluralCaseL(), [])))(),
+    VoidToLPluralCaseL: () => (T$.VoidToLPluralCaseL = dart.constFn(dart.legacy(T$.VoidToPluralCaseL())))(),
+    ObjectL: () => (T$.ObjectL = dart.constFn(dart.legacy(core.Object)))(),
+    JSArrayOfObjectL: () => (T$.JSArrayOfObjectL = dart.constFn(_interceptors.JSArray$(T$.ObjectL())))(),
+    LinkedMapOfObjectL$ObjectL: () => (T$.LinkedMapOfObjectL$ObjectL = dart.constFn(_js_helper.LinkedMap$(T$.ObjectL(), T$.ObjectL())))(),
+    _CompactStyleL: () => (T$._CompactStyleL = dart.constFn(dart.legacy(intl._CompactStyle)))(),
+    JSArrayOf_CompactStyleL: () => (T$.JSArrayOf_CompactStyleL = dart.constFn(_interceptors.JSArray$(T$._CompactStyleL())))(),
+    _CompactFormatTypeL: () => (T$._CompactFormatTypeL = dart.constFn(dart.legacy(intl._CompactFormatType)))(),
+    NumberSymbolsL: () => (T$.NumberSymbolsL = dart.constFn(dart.legacy(number_symbols.NumberSymbols)))(),
+    NumberSymbolsLToStringL: () => (T$.NumberSymbolsLToStringL = dart.constFn(dart.fnType(T$.StringL(), [T$.NumberSymbolsL()])))(),
+    _CompactStyleBaseL: () => (T$._CompactStyleBaseL = dart.constFn(dart.legacy(intl._CompactStyleBase)))(),
+    JSArrayOf_CompactStyleBaseL: () => (T$.JSArrayOf_CompactStyleBaseL = dart.constFn(_interceptors.JSArray$(T$._CompactStyleBaseL())))(),
+    intL: () => (T$.intL = dart.constFn(dart.legacy(core.int)))(),
+    intLAndStringLToNull: () => (T$.intLAndStringLToNull = dart.constFn(dart.fnType(core.Null, [T$.intL(), T$.StringL()])))(),
+    numL: () => (T$.numL = dart.constFn(dart.legacy(core.num)))(),
+    IterableOf_CompactStyleL: () => (T$.IterableOf_CompactStyleL = dart.constFn(core.Iterable$(T$._CompactStyleL())))(),
+    IterableLOf_CompactStyleL: () => (T$.IterableLOf_CompactStyleL = dart.constFn(dart.legacy(T$.IterableOf_CompactStyleL())))(),
+    _CompactStyleBaseLToIterableLOf_CompactStyleL: () => (T$._CompactStyleBaseLToIterableLOf_CompactStyleL = dart.constFn(dart.fnType(T$.IterableLOf_CompactStyleL(), [T$._CompactStyleBaseL()])))(),
+    FormatExceptionL: () => (T$.FormatExceptionL = dart.constFn(dart.legacy(core.FormatException)))(),
+    dynamicToboolL: () => (T$.dynamicToboolL = dart.constFn(dart.fnType(T$.boolL(), [dart.dynamic])))(),
+    NumberFormatL: () => (T$.NumberFormatL = dart.constFn(dart.legacy(intl.NumberFormat)))(),
+    NumberFormatLToStringL: () => (T$.NumberFormatLToStringL = dart.constFn(dart.fnType(T$.StringL(), [T$.NumberFormatL()])))(),
+    IdentityMapOfStringL$StringL: () => (T$.IdentityMapOfStringL$StringL = dart.constFn(_js_helper.IdentityMap$(T$.StringL(), T$.StringL())))(),
+    doubleL: () => (T$.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    DateTimeL: () => (T$.DateTimeL = dart.constFn(dart.legacy(core.DateTime)))(),
+    intLAndintLAndintL__ToDateTimeL: () => (T$.intLAndintLAndintL__ToDateTimeL = dart.constFn(dart.fnType(T$.DateTimeL(), [T$.intL(), T$.intL(), T$.intL(), T$.intL(), T$.intL(), T$.intL(), T$.intL(), T$.boolL()])))(),
+    _DateFormatFieldL: () => (T$._DateFormatFieldL = dart.constFn(dart.legacy(intl._DateFormatField)))(),
+    _DateFormatFieldLToboolL: () => (T$._DateFormatFieldLToboolL = dart.constFn(dart.fnType(T$.boolL(), [T$._DateFormatFieldL()])))(),
+    MapL: () => (T$.MapL = dart.constFn(dart.legacy(core.Map)))(),
+    ListOfintL: () => (T$.ListOfintL = dart.constFn(core.List$(T$.intL())))(),
+    IterableOfintL: () => (T$.IterableOfintL = dart.constFn(core.Iterable$(T$.intL())))(),
+    intLTointL: () => (T$.intLTointL = dart.constFn(dart.fnType(T$.intL(), [T$.intL()])))(),
+    _DateFormatQuotedFieldL: () => (T$._DateFormatQuotedFieldL = dart.constFn(dart.legacy(intl._DateFormatQuotedField)))(),
+    DateFormatL: () => (T$.DateFormatL = dart.constFn(dart.legacy(intl.DateFormat)))(),
+    StringLAndDateFormatLTo_DateFormatQuotedFieldL: () => (T$.StringLAndDateFormatLTo_DateFormatQuotedFieldL = dart.constFn(dart.fnType(T$._DateFormatQuotedFieldL(), [T$.StringL(), T$.DateFormatL()])))(),
+    _DateFormatPatternFieldL: () => (T$._DateFormatPatternFieldL = dart.constFn(dart.legacy(intl._DateFormatPatternField)))(),
+    StringLAndDateFormatLTo_DateFormatPatternFieldL: () => (T$.StringLAndDateFormatLTo_DateFormatPatternFieldL = dart.constFn(dart.fnType(T$._DateFormatPatternFieldL(), [T$.StringL(), T$.DateFormatL()])))(),
+    _DateFormatLiteralFieldL: () => (T$._DateFormatLiteralFieldL = dart.constFn(dart.legacy(intl._DateFormatLiteralField)))(),
+    StringLAndDateFormatLTo_DateFormatLiteralFieldL: () => (T$.StringLAndDateFormatLTo_DateFormatLiteralFieldL = dart.constFn(dart.fnType(T$._DateFormatLiteralFieldL(), [T$.StringL(), T$.DateFormatL()])))(),
+    StringLAndDateFormatLTo_DateFormatFieldL: () => (T$.StringLAndDateFormatLTo_DateFormatFieldL = dart.constFn(dart.fnType(T$._DateFormatFieldL(), [T$.StringL(), T$.DateFormatL()])))(),
+    StringLAndDateFormatLToL_DateFormatFieldL: () => (T$.StringLAndDateFormatLToL_DateFormatFieldL = dart.constFn(dart.legacy(T$.StringLAndDateFormatLTo_DateFormatFieldL())))(),
+    JSArrayOfStringLAndDateFormatLToL_DateFormatFieldL: () => (T$.JSArrayOfStringLAndDateFormatLToL_DateFormatFieldL = dart.constFn(_interceptors.JSArray$(T$.StringLAndDateFormatLToL_DateFormatFieldL())))(),
+    JSArrayOf_DateFormatFieldL: () => (T$.JSArrayOf_DateFormatFieldL = dart.constFn(_interceptors.JSArray$(T$._DateFormatFieldL())))(),
+    RegExpL: () => (T$.RegExpL = dart.constFn(dart.legacy(core.RegExp)))(),
+    JSArrayOfRegExpL: () => (T$.JSArrayOfRegExpL = dart.constFn(_interceptors.JSArray$(T$.RegExpL())))(),
+    IdentityMapOfStringL$boolL: () => (T$.IdentityMapOfStringL$boolL = dart.constFn(_js_helper.IdentityMap$(T$.StringL(), T$.boolL())))(),
+    IdentityMapOfStringL$RegExpL: () => (T$.IdentityMapOfStringL$RegExpL = dart.constFn(_js_helper.IdentityMap$(T$.StringL(), T$.RegExpL())))(),
+    _StreamL: () => (T$._StreamL = dart.constFn(dart.legacy(intl._Stream)))(),
+    numLTovoid: () => (T$.numLTovoid = dart.constFn(dart.fnType(dart.void, [T$.numL()])))(),
+    numLToLvoid: () => (T$.numLToLvoid = dart.constFn(dart.legacy(T$.numLTovoid())))(),
+    JSArrayOfListLOfStringL: () => (T$.JSArrayOfListLOfStringL = dart.constFn(_interceptors.JSArray$(T$.ListLOfStringL())))(),
+    numLTonumL: () => (T$.numLTonumL = dart.constFn(dart.fnType(T$.numL(), [T$.numL()])))(),
+    dynamicAnddynamicTointL: () => (T$.dynamicAnddynamicTointL = dart.constFn(dart.fnType(T$.intL(), [dart.dynamic, dart.dynamic])))(),
+    VoidToStringL: () => (T$.VoidToStringL = dart.constFn(dart.fnType(T$.StringL(), [])))(),
+    FunctionL: () => (T$.FunctionL = dart.constFn(dart.legacy(core.Function)))(),
+    IdentityMapOfStringL$FunctionL: () => (T$.IdentityMapOfStringL$FunctionL = dart.constFn(_js_helper.IdentityMap$(T$.StringL(), T$.FunctionL())))(),
+    _StringIteratorL: () => (T$._StringIteratorL = dart.constFn(dart.legacy(intl._StringIterator)))(),
+    _MicroMoneyL: () => (T$._MicroMoneyL = dart.constFn(dart.legacy(intl._MicroMoney)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T$);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const(new _internal.Symbol.new('Intl.locale'));
+    },
+    get C1() {
+      return C[1] = dart.fn(intl.Intl._throwLocaleError, T$.StringLToStringL());
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: plural_rules.PluralCase.prototype,
+        [_name]: "PluralCase.ZERO",
+        index: 0
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: plural_rules.PluralCase.prototype,
+        [_name]: "PluralCase.ONE",
+        index: 1
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: plural_rules.PluralCase.prototype,
+        [_name]: "PluralCase.TWO",
+        index: 2
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: plural_rules.PluralCase.prototype,
+        [_name]: "PluralCase.FEW",
+        index: 3
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: plural_rules.PluralCase.prototype,
+        [_name]: "PluralCase.MANY",
+        index: 4
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: plural_rules.PluralCase.prototype,
+        [_name]: "PluralCase.OTHER",
+        index: 5
+      });
+    },
+    get C8() {
+      return C[8] = dart.fn(plural_rules.localeHasPluralRules, T$.StringLToboolL());
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: convert.HtmlEscapeMode.prototype,
+        [HtmlEscapeMode_escapeSlash]: true,
+        [HtmlEscapeMode_escapeApos]: true,
+        [HtmlEscapeMode_escapeQuot]: true,
+        [HtmlEscapeMode_escapeLtGt]: true,
+        [HtmlEscapeMode__name]: "unknown"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: convert.HtmlEscape.prototype,
+        [HtmlEscape_mode]: C[10] || CT.C10
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: intl.TextDirection.prototype,
+        [spanText$]: "ltr",
+        [value$]: "LTR"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: intl.TextDirection.prototype,
+        [spanText$]: "rtl",
+        [value$]: "RTL"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: intl.TextDirection.prototype,
+        [spanText$]: "ltr",
+        [value$]: "UNKNOWN"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: intl._CompactFormatType.prototype,
+        [_name$]: "_CompactFormatType.COMPACT_DECIMAL_SHORT_PATTERN",
+        index: 0
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: intl._CompactFormatType.prototype,
+        [_name$]: "_CompactFormatType.COMPACT_DECIMAL_LONG_PATTERN",
+        index: 1
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: intl._CompactFormatType.prototype,
+        [_name$]: "_CompactFormatType.COMPACT_DECIMAL_SHORT_CURRENCY_PATTERN",
+        index: 2
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16], T$._CompactFormatTypeL());
+    },
+    get C18() {
+      return C[18] = dart.fn(intl._CompactNumberFormat._forDecimal, T$.NumberSymbolsLToStringL());
+    },
+    get C19() {
+      return C[19] = dart.fn(intl.NumberFormat.localeExists, T$.dynamicToboolL());
+    },
+    get C20() {
+      return C[20] = dart.fn(intl.DateFormat.localeExists, T$.dynamicToboolL());
+    }
+  }, false);
+  var C = Array(21).fill(void 0);
+  var I = [
+    "package:intl/src/intl_helpers.dart",
+    "package:intl/intl.dart"
+  ];
+  var message$ = dart.privateName(intl_helpers, "UninitializedLocaleData.message");
+  var fallbackData$ = dart.privateName(intl_helpers, "UninitializedLocaleData.fallbackData");
+  var _badMessages = dart.privateName(intl_helpers, "_badMessages");
+  var _isFallback = dart.privateName(intl_helpers, "_isFallback");
+  var _throwException = dart.privateName(intl_helpers, "_throwException");
+  var _uninitializedMessages = dart.privateName(intl_helpers, "_uninitializedMessages");
+  var _reportErrors = dart.privateName(intl_helpers, "_reportErrors");
+  const _is_UninitializedLocaleData_default = Symbol('_is_UninitializedLocaleData_default');
+  intl_helpers.UninitializedLocaleData$ = dart.generic(F => {
+    class UninitializedLocaleData extends core.Object {
+      get message() {
+        return this[message$];
+      }
+      set message(value) {
+        super.message = value;
+      }
+      get fallbackData() {
+        return this[fallbackData$];
+      }
+      set fallbackData(value) {
+        super.fallbackData = value;
+      }
+      [_isFallback](key) {
+        return intl.Intl.canonicalizedLocale(key) === "en_US";
+      }
+      _get(key) {
+        return dart.test(this[_isFallback](key)) ? this.fallbackData : this[_throwException]();
+      }
+      [_reportErrors]() {
+        if (dart.test(intl_helpers.UninitializedLocaleData.throwOnFallback) && dart.test(this[_badMessages][$isNotEmpty])) {
+          dart.throw(new core.StateError.new("The following messages were called before locale initialization:" + " " + dart.str(this[_uninitializedMessages])));
+        }
+      }
+      get [_uninitializedMessages]() {
+        let t0;
+        return (t0 = this[_badMessages][$toSet]()[$toList](), (() => {
+          t0[$sort]();
+          return t0;
+        })())[$join]("\n    ");
+      }
+      lookupMessage(messageText, locale, name, args, meaning, opts) {
+        let t0;
+        let ifAbsent = opts && 'ifAbsent' in opts ? opts.ifAbsent : null;
+        if (dart.test(intl_helpers.UninitializedLocaleData.throwOnFallback)) {
+          this[_badMessages][$add]((t0 = name, t0 == null ? messageText : t0));
+        }
+        return messageText;
+      }
+      findLocale(locale) {
+        let t0;
+        t0 = locale;
+        return t0 == null ? intl.Intl.getCurrentLocale() : t0;
+      }
+      get keys() {
+        return T$.ListLOfStringL().as(this[_throwException]());
+      }
+      containsKey(key) {
+        return T$.boolL().as(dart.test(this[_isFallback](key)) ? true : this[_throwException]());
+      }
+      [_throwException]() {
+        dart.throw(new intl_helpers.LocaleDataException.new("Locale data has not been initialized" + ", call " + dart.str(this.message) + "."));
+      }
+      addLocale(localeName, findLocale) {
+        return this[_throwException]();
+      }
+    }
+    (UninitializedLocaleData.new = function(message, fallbackData) {
+      this[_badMessages] = T$.JSArrayOfStringL().of([]);
+      this[message$] = message;
+      this[fallbackData$] = fallbackData;
+      ;
+    }).prototype = UninitializedLocaleData.prototype;
+    dart.addTypeTests(UninitializedLocaleData);
+    UninitializedLocaleData.prototype[_is_UninitializedLocaleData_default] = true;
+    dart.addTypeCaches(UninitializedLocaleData);
+    UninitializedLocaleData[dart.implements] = () => [intl_helpers.MessageLookup];
+    dart.setMethodSignature(UninitializedLocaleData, () => ({
+      __proto__: dart.getMethods(UninitializedLocaleData.__proto__),
+      [_isFallback]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.String)]),
+      _get: dart.fnType(dart.legacy(F), [dart.legacy(core.String)]),
+      [_reportErrors]: dart.fnType(dart.void, []),
+      lookupMessage: dart.fnType(dart.legacy(core.String), [dart.legacy(core.String), dart.legacy(core.String), dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(core.Object))), dart.legacy(core.String)], {ifAbsent: dart.legacy(dart.fnType(dart.legacy(core.String), [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(core.Object)))]))}, {}),
+      findLocale: dart.fnType(dart.legacy(core.String), [dart.legacy(core.String)]),
+      containsKey: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.String)]),
+      [_throwException]: dart.fnType(dart.legacy(F), []),
+      addLocale: dart.fnType(dart.void, [dart.legacy(core.String), dart.legacy(core.Function)])
+    }));
+    dart.setGetterSignature(UninitializedLocaleData, () => ({
+      __proto__: dart.getGetters(UninitializedLocaleData.__proto__),
+      [_uninitializedMessages]: dart.legacy(core.String),
+      keys: dart.legacy(core.List$(dart.legacy(core.String)))
+    }));
+    dart.setLibraryUri(UninitializedLocaleData, I[0]);
+    dart.setFieldSignature(UninitializedLocaleData, () => ({
+      __proto__: dart.getFields(UninitializedLocaleData.__proto__),
+      message: dart.finalFieldType(dart.legacy(core.String)),
+      fallbackData: dart.finalFieldType(dart.legacy(F)),
+      [_badMessages]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.String))))
+    }));
+    return UninitializedLocaleData;
+  });
+  intl_helpers.UninitializedLocaleData = intl_helpers.UninitializedLocaleData$();
+  dart.defineLazy(intl_helpers.UninitializedLocaleData, {
+    /*intl_helpers.UninitializedLocaleData.throwOnFallback*/get throwOnFallback() {
+      return false;
+    }
+  }, true);
+  dart.addTypeTests(intl_helpers.UninitializedLocaleData, _is_UninitializedLocaleData_default);
+  intl_helpers.MessageLookup = class MessageLookup extends core.Object {};
+  (intl_helpers.MessageLookup.new = function() {
+    ;
+  }).prototype = intl_helpers.MessageLookup.prototype;
+  dart.addTypeTests(intl_helpers.MessageLookup);
+  dart.addTypeCaches(intl_helpers.MessageLookup);
+  dart.setLibraryUri(intl_helpers.MessageLookup, I[0]);
+  var message$0 = dart.privateName(intl_helpers, "LocaleDataException.message");
+  intl_helpers.LocaleDataException = class LocaleDataException extends core.Object {
+    get message() {
+      return this[message$0];
+    }
+    set message(value) {
+      super.message = value;
+    }
+    toString() {
+      return "LocaleDataException: " + dart.str(this.message);
+    }
+  };
+  (intl_helpers.LocaleDataException.new = function(message) {
+    this[message$0] = message;
+    ;
+  }).prototype = intl_helpers.LocaleDataException.prototype;
+  dart.addTypeTests(intl_helpers.LocaleDataException);
+  dart.addTypeCaches(intl_helpers.LocaleDataException);
+  intl_helpers.LocaleDataException[dart.implements] = () => [core.Exception];
+  dart.setMethodSignature(intl_helpers.LocaleDataException, () => ({
+    __proto__: dart.getMethods(intl_helpers.LocaleDataException.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(intl_helpers.LocaleDataException, I[0]);
+  dart.setFieldSignature(intl_helpers.LocaleDataException, () => ({
+    __proto__: dart.getFields(intl_helpers.LocaleDataException.__proto__),
+    message: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(intl_helpers.LocaleDataException, ['toString']);
+  intl_helpers.LocaleDataReader = class LocaleDataReader extends core.Object {};
+  (intl_helpers.LocaleDataReader.new = function() {
+    ;
+  }).prototype = intl_helpers.LocaleDataReader.prototype;
+  dart.addTypeTests(intl_helpers.LocaleDataReader);
+  dart.addTypeCaches(intl_helpers.LocaleDataReader);
+  dart.setLibraryUri(intl_helpers.LocaleDataReader, I[0]);
+  intl_helpers.initializeInternalMessageLookup = function initializeInternalMessageLookup(lookupFunction) {
+    if (T$.UninitializedLocaleDataL().is(intl_helpers.messageLookup)) {
+      T$.UninitializedLocaleDataL().as(intl_helpers.messageLookup)[_reportErrors]();
+      intl_helpers.messageLookup = T$.MessageLookupL().as(dart.dcall(lookupFunction, []));
+    }
+  };
+  intl_helpers.computeMessageName = function computeMessageName(name, text, meaning) {
+    if (name != null && name !== "") return name;
+    return meaning == null ? text : dart.str(text) + "_" + dart.str(meaning);
+  };
+  dart.defineLazy(intl_helpers, {
+    /*intl_helpers.messageLookup*/get messageLookup() {
+      return new (T$.UninitializedLocaleDataOfNull()).new("initializeMessages(<locale>)", null);
+    },
+    set messageLookup(_) {}
+  }, true);
+  date_format_internal.initializeDateSymbols = function initializeDateSymbols(symbols) {
+    if (T$.UninitializedLocaleDataL().is(date_format_internal.dateTimeSymbols)) {
+      date_format_internal.dateTimeSymbols = dart.dcall(symbols, []);
+    }
+  };
+  date_format_internal.initializeDatePatterns = function initializeDatePatterns(patterns) {
+    if (T$.UninitializedLocaleDataL().is(date_format_internal.dateTimePatterns)) {
+      date_format_internal.dateTimePatterns = dart.dcall(patterns, []);
+    }
+  };
+  date_format_internal.initializeIndividualLocaleDateFormatting = function initializeIndividualLocaleDateFormatting(init) {
+    return T$.FutureL().as(dart.dcall(init, [date_format_internal.dateTimeSymbols, date_format_internal.dateTimePatterns]));
+  };
+  dart.copyProperties(date_format_internal, {
+    get dateTimeSymbols() {
+      return date_format_internal._dateTimeSymbols;
+    },
+    set dateTimeSymbols(symbols) {
+      date_format_internal._dateTimeSymbols = symbols;
+      date_format_internal.cachedDateSymbols = null;
+      date_format_internal.lastDateSymbolLocale = null;
+    }
+  });
+  dart.defineLazy(date_format_internal, {
+    /*date_format_internal._dateTimeSymbols*/get _dateTimeSymbols() {
+      return new (T$.UninitializedLocaleDataOfDateSymbolsL()).new("initializeDateFormatting(<locale>)", date_symbols.en_USSymbols);
+    },
+    set _dateTimeSymbols(_) {},
+    /*date_format_internal.cachedDateSymbols*/get cachedDateSymbols() {
+      return null;
+    },
+    set cachedDateSymbols(_) {},
+    /*date_format_internal.lastDateSymbolLocale*/get lastDateSymbolLocale() {
+      return null;
+    },
+    set lastDateSymbolLocale(_) {},
+    /*date_format_internal.dateTimePatterns*/get dateTimePatterns() {
+      return new (T$.UninitializedLocaleDataOfMapLOfStringL$StringL()).new("initializeDateFormatting(<locale>)", date_symbols.en_USPatterns);
+    },
+    set dateTimePatterns(_) {}
+  }, true);
+  var _locale$ = dart.privateName(intl, "_locale");
+  var _name = dart.privateName(plural_rules, "_name");
+  intl.Intl = class Intl extends core.Object {
+    static get defaultLocale() {
+      let zoneLocale = T$.StringL().as(async.Zone.current._get(C[0] || CT.C0));
+      return zoneLocale == null ? intl.Intl._defaultLocale : zoneLocale;
+    }
+    static set defaultLocale(newLocale) {
+      intl.Intl._defaultLocale = newLocale;
+    }
+    date(pattern = null, desiredLocale = null) {
+      let actualLocale = desiredLocale == null ? this.locale : desiredLocale;
+      return new intl.DateFormat.new(pattern, actualLocale);
+    }
+    static message(messageText, opts) {
+      let desc = opts && 'desc' in opts ? opts.desc : "";
+      let examples = opts && 'examples' in opts ? opts.examples : null;
+      let locale = opts && 'locale' in opts ? opts.locale : null;
+      let name = opts && 'name' in opts ? opts.name : null;
+      let args = opts && 'args' in opts ? opts.args : null;
+      let meaning = opts && 'meaning' in opts ? opts.meaning : null;
+      let skip = opts && 'skip' in opts ? opts.skip : null;
+      return intl.Intl._message(messageText, locale, name, args, meaning);
+    }
+    static _message(messageText, locale, name, args, meaning) {
+      return intl_helpers.messageLookup.lookupMessage(messageText, locale, name, args, meaning);
+    }
+    get locale() {
+      return this[_locale$];
+    }
+    static verifiedLocale(newLocale, localeExists, opts) {
+      let onFailure = opts && 'onFailure' in opts ? opts.onFailure : C[1] || CT.C1;
+      if (newLocale == null) {
+        return intl.Intl.verifiedLocale(intl.Intl.getCurrentLocale(), localeExists, {onFailure: onFailure});
+      }
+      if (dart.test(localeExists(newLocale))) {
+        return newLocale;
+      }
+      for (let each of T$.JSArrayOfStringL().of([intl.Intl.canonicalizedLocale(newLocale), intl.Intl.shortLocale(newLocale), "fallback"])) {
+        if (dart.test(localeExists(each))) {
+          return each;
+        }
+      }
+      return onFailure(newLocale);
+    }
+    static _throwLocaleError(localeName) {
+      dart.throw(new core.ArgumentError.new("Invalid locale \"" + dart.str(localeName) + "\""));
+    }
+    static shortLocale(aLocale) {
+      if (aLocale.length < 2) return aLocale;
+      return aLocale[$substring](0, 2)[$toLowerCase]();
+    }
+    static canonicalizedLocale(aLocale) {
+      if (aLocale == null) return intl.Intl.getCurrentLocale();
+      if (aLocale === "C") return "en_ISO";
+      if (aLocale.length < 5) return aLocale;
+      if (aLocale[$_get](2) !== "-" && aLocale[$_get](2) !== "_") return aLocale;
+      let region = aLocale[$substring](3);
+      if (region.length <= 3) region = region[$toUpperCase]();
+      return aLocale[$_get](0) + aLocale[$_get](1) + "_" + region;
+    }
+    static plural(howMany, opts) {
+      let zero = opts && 'zero' in opts ? opts.zero : null;
+      let one = opts && 'one' in opts ? opts.one : null;
+      let two = opts && 'two' in opts ? opts.two : null;
+      let few = opts && 'few' in opts ? opts.few : null;
+      let many = opts && 'many' in opts ? opts.many : null;
+      let other = opts && 'other' in opts ? opts.other : null;
+      let desc = opts && 'desc' in opts ? opts.desc : null;
+      let examples = opts && 'examples' in opts ? opts.examples : null;
+      let locale = opts && 'locale' in opts ? opts.locale : null;
+      let precision = opts && 'precision' in opts ? opts.precision : null;
+      let name = opts && 'name' in opts ? opts.name : null;
+      let args = opts && 'args' in opts ? opts.args : null;
+      let meaning = opts && 'meaning' in opts ? opts.meaning : null;
+      let skip = opts && 'skip' in opts ? opts.skip : null;
+      return intl.Intl._plural(howMany, {zero: zero, one: one, two: two, few: few, many: many, other: other, locale: locale, precision: precision, name: name, args: args, meaning: meaning});
+    }
+    static _plural(howMany, opts) {
+      let t0;
+      let zero = opts && 'zero' in opts ? opts.zero : null;
+      let one = opts && 'one' in opts ? opts.one : null;
+      let two = opts && 'two' in opts ? opts.two : null;
+      let few = opts && 'few' in opts ? opts.few : null;
+      let many = opts && 'many' in opts ? opts.many : null;
+      let other = opts && 'other' in opts ? opts.other : null;
+      let locale = opts && 'locale' in opts ? opts.locale : null;
+      let precision = opts && 'precision' in opts ? opts.precision : null;
+      let name = opts && 'name' in opts ? opts.name : null;
+      let args = opts && 'args' in opts ? opts.args : null;
+      let meaning = opts && 'meaning' in opts ? opts.meaning : null;
+      let translated = intl.Intl._message(null, locale, name, args, meaning);
+      t0 = translated;
+      return t0 == null ? intl.Intl.pluralLogic(T$.StringL(), howMany, {zero: zero, one: one, two: two, few: few, many: many, other: other, locale: locale, precision: precision}) : t0;
+    }
+    static pluralLogic(T, howMany, opts) {
+      let t0, t0$, t0$0, t0$1, t0$2, t0$3;
+      let zero = opts && 'zero' in opts ? opts.zero : null;
+      let one = opts && 'one' in opts ? opts.one : null;
+      let two = opts && 'two' in opts ? opts.two : null;
+      let few = opts && 'few' in opts ? opts.few : null;
+      let many = opts && 'many' in opts ? opts.many : null;
+      let other = opts && 'other' in opts ? opts.other : null;
+      let locale = opts && 'locale' in opts ? opts.locale : null;
+      let precision = opts && 'precision' in opts ? opts.precision : null;
+      let meaning = opts && 'meaning' in opts ? opts.meaning : null;
+      if (other == null) {
+        dart.throw(new core.ArgumentError.new("The 'other' named argument must be provided"));
+      }
+      if (howMany == null) {
+        dart.throw(new core.ArgumentError.new("The howMany argument to plural cannot be null"));
+      }
+      let truncated = howMany[$truncate]();
+      if (precision == null && truncated === howMany) {
+        howMany = truncated;
+      }
+      if (precision == null || precision === 0) {
+        if (howMany === 0 && zero != null) return zero;
+        if (howMany === 1 && one != null) return one;
+        if (howMany === 2 && two != null) return two;
+      }
+      let pluralRule = intl.Intl._pluralRule(locale, howMany, precision);
+      let pluralCase = pluralRule();
+      switch (pluralCase) {
+        case C[2] || CT.C2:
+        {
+          t0 = zero;
+          return t0 == null ? other : t0;
+        }
+        case C[3] || CT.C3:
+        {
+          t0$ = one;
+          return t0$ == null ? other : t0$;
+        }
+        case C[4] || CT.C4:
+        {
+          t0$1 = (t0$0 = two, t0$0 == null ? few : t0$0);
+          return t0$1 == null ? other : t0$1;
+        }
+        case C[5] || CT.C5:
+        {
+          t0$2 = few;
+          return t0$2 == null ? other : t0$2;
+        }
+        case C[6] || CT.C6:
+        {
+          t0$3 = many;
+          return t0$3 == null ? other : t0$3;
+        }
+        case C[7] || CT.C7:
+        {
+          return other;
+        }
+        default:
+        {
+          dart.throw(new core.ArgumentError.value(howMany, "howMany", "Invalid plural argument"));
+        }
+      }
+    }
+    static _pluralRule(locale, howMany, precision) {
+      plural_rules.startRuleEvaluation(howMany, precision);
+      let verifiedLocale = intl.Intl.verifiedLocale(locale, C[8] || CT.C8, {onFailure: dart.fn(locale => "default", T$.StringLToStringL())});
+      if (intl.Intl._cachedPluralLocale == verifiedLocale) {
+        return intl.Intl._cachedPluralRule;
+      } else {
+        intl.Intl._cachedPluralRule = T$.VoidToLPluralCaseL().as(plural_rules.pluralRules[$_get](verifiedLocale));
+        intl.Intl._cachedPluralLocale = verifiedLocale;
+        return intl.Intl._cachedPluralRule;
+      }
+    }
+    static gender(targetGender, opts) {
+      let female = opts && 'female' in opts ? opts.female : null;
+      let male = opts && 'male' in opts ? opts.male : null;
+      let other = opts && 'other' in opts ? opts.other : null;
+      let desc = opts && 'desc' in opts ? opts.desc : null;
+      let examples = opts && 'examples' in opts ? opts.examples : null;
+      let locale = opts && 'locale' in opts ? opts.locale : null;
+      let name = opts && 'name' in opts ? opts.name : null;
+      let args = opts && 'args' in opts ? opts.args : null;
+      let meaning = opts && 'meaning' in opts ? opts.meaning : null;
+      let skip = opts && 'skip' in opts ? opts.skip : null;
+      return intl.Intl._gender(targetGender, {male: male, female: female, other: other, locale: locale, name: name, args: args, meaning: meaning});
+    }
+    static _gender(targetGender, opts) {
+      let t0;
+      let female = opts && 'female' in opts ? opts.female : null;
+      let male = opts && 'male' in opts ? opts.male : null;
+      let other = opts && 'other' in opts ? opts.other : null;
+      let desc = opts && 'desc' in opts ? opts.desc : null;
+      let locale = opts && 'locale' in opts ? opts.locale : null;
+      let name = opts && 'name' in opts ? opts.name : null;
+      let args = opts && 'args' in opts ? opts.args : null;
+      let meaning = opts && 'meaning' in opts ? opts.meaning : null;
+      let translated = intl.Intl._message(null, locale, name, args, meaning);
+      t0 = translated;
+      return t0 == null ? intl.Intl.genderLogic(T$.StringL(), targetGender, {female: female, male: male, other: other, locale: locale}) : t0;
+    }
+    static genderLogic(T, targetGender, opts) {
+      let female = opts && 'female' in opts ? opts.female : null;
+      let male = opts && 'male' in opts ? opts.male : null;
+      let other = opts && 'other' in opts ? opts.other : null;
+      let locale = opts && 'locale' in opts ? opts.locale : null;
+      if (other == null) {
+        dart.throw(new core.ArgumentError.new("The 'other' named argument must be specified"));
+      }
+      switch (targetGender) {
+        case "female":
+        {
+          return female == null ? other : female;
+        }
+        case "male":
+        {
+          return male == null ? other : male;
+        }
+        default:
+        {
+          return other;
+        }
+      }
+    }
+    static select(choice, cases, opts) {
+      let desc = opts && 'desc' in opts ? opts.desc : null;
+      let examples = opts && 'examples' in opts ? opts.examples : null;
+      let locale = opts && 'locale' in opts ? opts.locale : null;
+      let name = opts && 'name' in opts ? opts.name : null;
+      let args = opts && 'args' in opts ? opts.args : null;
+      let meaning = opts && 'meaning' in opts ? opts.meaning : null;
+      let skip = opts && 'skip' in opts ? opts.skip : null;
+      return intl.Intl._select(choice, cases, {locale: locale, name: name, args: args, meaning: meaning});
+    }
+    static _select(choice, cases, opts) {
+      let t0, t0$;
+      let locale = opts && 'locale' in opts ? opts.locale : null;
+      let name = opts && 'name' in opts ? opts.name : null;
+      let args = opts && 'args' in opts ? opts.args : null;
+      let meaning = opts && 'meaning' in opts ? opts.meaning : null;
+      let stringChoice = T$.StringL().is(choice) ? choice : dart.str(choice)[$split](".")[$last];
+      let modifiedArgs = args == null ? null : (t0 = T$.JSArrayOfObjectL().of([stringChoice]), (() => {
+        t0[$addAll](args[$skip](1));
+        return t0;
+      })());
+      let translated = intl.Intl._message(null, locale, name, modifiedArgs, meaning);
+      t0$ = translated;
+      return t0$ == null ? intl.Intl.selectLogic(T$.StringL(), choice, cases) : t0$;
+    }
+    static selectLogic(T, choice, cases) {
+      let exact = cases[$_get](choice);
+      if (exact != null) return exact;
+      let stringChoice = dart.str(choice)[$split](".")[$last];
+      let stringMatch = cases[$_get](stringChoice);
+      if (stringMatch != null) return stringMatch;
+      let other = cases[$_get]("other");
+      if (other == null) {
+        dart.throw(new core.ArgumentError.new("The 'other' case must be specified"));
+      }
+      return other;
+    }
+    static withLocale(T, locale, $function) {
+      let canonical = intl.Intl.canonicalizedLocale(locale);
+      return async.runZoned(dart.legacy(T), $function, {zoneValues: new (T$.LinkedMapOfObjectL$ObjectL()).from([C[0] || CT.C0, canonical])});
+    }
+    static getCurrentLocale() {
+      intl.Intl.defaultLocale == null ? intl.Intl.defaultLocale = intl.Intl.systemLocale : null;
+      return intl.Intl.defaultLocale;
+    }
+    toString() {
+      return "Intl(" + dart.str(this.locale) + ")";
+    }
+  };
+  (intl.Intl.new = function(aLocale = null) {
+    this[_locale$] = null;
+    this[_locale$] = aLocale != null ? aLocale : intl.Intl.getCurrentLocale();
+  }).prototype = intl.Intl.prototype;
+  dart.addTypeTests(intl.Intl);
+  dart.addTypeCaches(intl.Intl);
+  dart.setMethodSignature(intl.Intl, () => ({
+    __proto__: dart.getMethods(intl.Intl.__proto__),
+    date: dart.fnType(dart.legacy(intl.DateFormat), [], [dart.legacy(core.String), dart.legacy(core.String)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setGetterSignature(intl.Intl, () => ({
+    __proto__: dart.getGetters(intl.Intl.__proto__),
+    locale: dart.legacy(core.String)
+  }));
+  dart.setLibraryUri(intl.Intl, I[1]);
+  dart.setFieldSignature(intl.Intl, () => ({
+    __proto__: dart.getFields(intl.Intl.__proto__),
+    [_locale$]: dart.fieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(intl.Intl, ['toString']);
+  dart.defineLazy(intl.Intl, {
+    /*intl.Intl._defaultLocale*/get _defaultLocale() {
+      return null;
+    },
+    set _defaultLocale(_) {},
+    /*intl.Intl.systemLocale*/get systemLocale() {
+      return "en_US";
+    },
+    set systemLocale(_) {},
+    /*intl.Intl._cachedPluralRule*/get _cachedPluralRule() {
+      return null;
+    },
+    set _cachedPluralRule(_) {},
+    /*intl.Intl._cachedPluralLocale*/get _cachedPluralLocale() {
+      return null;
+    },
+    set _cachedPluralLocale(_) {}
+  }, true);
+  var contextDirection = dart.privateName(intl, "BidiFormatter.contextDirection");
+  var _alwaysSpan = dart.privateName(intl, "_alwaysSpan");
+  var HtmlEscapeMode_escapeSlash = dart.privateName(convert, "HtmlEscapeMode.escapeSlash");
+  var HtmlEscapeMode_escapeApos = dart.privateName(convert, "HtmlEscapeMode.escapeApos");
+  var HtmlEscapeMode_escapeQuot = dart.privateName(convert, "HtmlEscapeMode.escapeQuot");
+  var HtmlEscapeMode_escapeLtGt = dart.privateName(convert, "HtmlEscapeMode.escapeLtGt");
+  var HtmlEscapeMode__name = dart.privateName(convert, "HtmlEscapeMode._name");
+  var HtmlEscape_mode = dart.privateName(convert, "HtmlEscape.mode");
+  var _resetDir = dart.privateName(intl, "_resetDir");
+  intl.BidiFormatter = class BidiFormatter extends core.Object {
+    get contextDirection() {
+      return this[contextDirection];
+    }
+    set contextDirection(value) {
+      this[contextDirection] = value;
+    }
+    get isRTL() {
+      return dart.equals(this.contextDirection, intl.TextDirection.RTL);
+    }
+    wrapWithSpan(text, opts) {
+      let isHtml = opts && 'isHtml' in opts ? opts.isHtml : false;
+      let resetDir = opts && 'resetDir' in opts ? opts.resetDir : true;
+      let direction = opts && 'direction' in opts ? opts.direction : null;
+      direction == null ? direction = this.estimateDirection(text, {isHtml: isHtml}) : null;
+      let result = null;
+      if (!dart.test(isHtml)) text = (C[9] || CT.C9).convert(text);
+      let directionChange = this.contextDirection.isDirectionChange(direction);
+      if (dart.test(this[_alwaysSpan]) || dart.test(directionChange)) {
+        let spanDirection = "";
+        if (dart.test(directionChange)) {
+          spanDirection = " dir=" + dart.str(direction.spanText);
+        }
+        result = "<span" + spanDirection + ">" + dart.str(text) + "</span>";
+      } else {
+        result = text;
+      }
+      return dart.notNull(result) + dart.notNull(dart.test(resetDir) ? this[_resetDir](text, direction, isHtml) : "");
+    }
+    wrapWithUnicode(text, opts) {
+      let isHtml = opts && 'isHtml' in opts ? opts.isHtml : false;
+      let resetDir = opts && 'resetDir' in opts ? opts.resetDir : true;
+      let direction = opts && 'direction' in opts ? opts.direction : null;
+      direction == null ? direction = this.estimateDirection(text, {isHtml: isHtml}) : null;
+      let result = text;
+      if (dart.test(this.contextDirection.isDirectionChange(direction))) {
+        let marker = dart.equals(direction, intl.TextDirection.RTL) ? "‫" : "‪";
+        result = marker + dart.str(text) + "‬";
+      }
+      return dart.notNull(result) + dart.notNull(dart.test(resetDir) ? this[_resetDir](text, direction, isHtml) : "");
+    }
+    estimateDirection(text, opts) {
+      let isHtml = opts && 'isHtml' in opts ? opts.isHtml : false;
+      return intl.Bidi.estimateDirectionOfText(text, {isHtml: isHtml});
+    }
+    [_resetDir](text, direction, isHtml) {
+      if (dart.equals(this.contextDirection, intl.TextDirection.LTR) && (dart.equals(direction, intl.TextDirection.RTL) || dart.test(intl.Bidi.endsWithRtl(text, isHtml))) || dart.equals(this.contextDirection, intl.TextDirection.RTL) && (dart.equals(direction, intl.TextDirection.LTR) || dart.test(intl.Bidi.endsWithLtr(text, isHtml)))) {
+        return dart.equals(this.contextDirection, intl.TextDirection.LTR) ? "‎" : "‏";
+      } else {
+        return "";
+      }
+    }
+  };
+  (intl.BidiFormatter.LTR = function(alwaysSpan = false) {
+    this[contextDirection] = intl.TextDirection.LTR;
+    this[_alwaysSpan] = T$.boolL().as(alwaysSpan);
+    ;
+  }).prototype = intl.BidiFormatter.prototype;
+  (intl.BidiFormatter.RTL = function(alwaysSpan = false) {
+    this[contextDirection] = intl.TextDirection.RTL;
+    this[_alwaysSpan] = T$.boolL().as(alwaysSpan);
+    ;
+  }).prototype = intl.BidiFormatter.prototype;
+  (intl.BidiFormatter.UNKNOWN = function(alwaysSpan = false) {
+    this[contextDirection] = intl.TextDirection.UNKNOWN;
+    this[_alwaysSpan] = T$.boolL().as(alwaysSpan);
+    ;
+  }).prototype = intl.BidiFormatter.prototype;
+  dart.addTypeTests(intl.BidiFormatter);
+  dart.addTypeCaches(intl.BidiFormatter);
+  dart.setMethodSignature(intl.BidiFormatter, () => ({
+    __proto__: dart.getMethods(intl.BidiFormatter.__proto__),
+    wrapWithSpan: dart.fnType(dart.legacy(core.String), [dart.legacy(core.String)], {direction: dart.legacy(intl.TextDirection), isHtml: dart.legacy(core.bool), resetDir: dart.legacy(core.bool)}, {}),
+    wrapWithUnicode: dart.fnType(dart.legacy(core.String), [dart.legacy(core.String)], {direction: dart.legacy(intl.TextDirection), isHtml: dart.legacy(core.bool), resetDir: dart.legacy(core.bool)}, {}),
+    estimateDirection: dart.fnType(dart.legacy(intl.TextDirection), [dart.legacy(core.String)], {isHtml: dart.legacy(core.bool)}, {}),
+    [_resetDir]: dart.fnType(dart.legacy(core.String), [dart.legacy(core.String), dart.legacy(intl.TextDirection), dart.legacy(core.bool)])
+  }));
+  dart.setGetterSignature(intl.BidiFormatter, () => ({
+    __proto__: dart.getGetters(intl.BidiFormatter.__proto__),
+    isRTL: dart.legacy(core.bool)
+  }));
+  dart.setLibraryUri(intl.BidiFormatter, I[1]);
+  dart.setFieldSignature(intl.BidiFormatter, () => ({
+    __proto__: dart.getFields(intl.BidiFormatter.__proto__),
+    contextDirection: dart.fieldType(dart.legacy(intl.TextDirection)),
+    [_alwaysSpan]: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  var value$ = dart.privateName(intl, "TextDirection.value");
+  var spanText$ = dart.privateName(intl, "TextDirection.spanText");
+  intl.TextDirection = class TextDirection extends core.Object {
+    get value() {
+      return this[value$];
+    }
+    set value(value) {
+      super.value = value;
+    }
+    get spanText() {
+      return this[spanText$];
+    }
+    set spanText(value) {
+      super.spanText = value;
+    }
+    isDirectionChange(otherDirection) {
+      return !dart.equals(otherDirection, intl.TextDirection.UNKNOWN) && !this._equals(otherDirection);
+    }
+  };
+  (intl.TextDirection.__ = function(value, spanText) {
+    this[value$] = value;
+    this[spanText$] = spanText;
+    ;
+  }).prototype = intl.TextDirection.prototype;
+  dart.addTypeTests(intl.TextDirection);
+  dart.addTypeCaches(intl.TextDirection);
+  dart.setMethodSignature(intl.TextDirection, () => ({
+    __proto__: dart.getMethods(intl.TextDirection.__proto__),
+    isDirectionChange: dart.fnType(dart.legacy(core.bool), [dart.legacy(intl.TextDirection)])
+  }));
+  dart.setLibraryUri(intl.TextDirection, I[1]);
+  dart.setFieldSignature(intl.TextDirection, () => ({
+    __proto__: dart.getFields(intl.TextDirection.__proto__),
+    value: dart.finalFieldType(dart.legacy(core.String)),
+    spanText: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineLazy(intl.TextDirection, {
+    /*intl.TextDirection.LTR*/get LTR() {
+      return C[11] || CT.C11;
+    },
+    /*intl.TextDirection.RTL*/get RTL() {
+      return C[12] || CT.C12;
+    },
+    /*intl.TextDirection.UNKNOWN*/get UNKNOWN() {
+      return C[13] || CT.C13;
+    }
+  }, true);
+  intl.Bidi = class Bidi extends core.Object {
+    static stripHtmlIfNeeded(text) {
+      return text[$replaceAll](core.RegExp.new("<[^>]*>|&[^;]+;"), " ");
+    }
+    static startsWithLtr(text, isHtml = false) {
+      return core.RegExp.new("^[^" + dart.str(intl.Bidi._RTL_CHARS) + "]*[" + dart.str(intl.Bidi._LTR_CHARS) + "]").hasMatch(dart.dtest(isHtml) ? intl.Bidi.stripHtmlIfNeeded(text) : text);
+    }
+    static startsWithRtl(text, isHtml = false) {
+      return core.RegExp.new("^[^" + dart.str(intl.Bidi._LTR_CHARS) + "]*[" + dart.str(intl.Bidi._RTL_CHARS) + "]").hasMatch(dart.dtest(isHtml) ? intl.Bidi.stripHtmlIfNeeded(text) : text);
+    }
+    static endsWithLtr(text, isHtml = false) {
+      return core.RegExp.new("[" + dart.str(intl.Bidi._LTR_CHARS) + "][^" + dart.str(intl.Bidi._RTL_CHARS) + "]*$").hasMatch(dart.dtest(isHtml) ? intl.Bidi.stripHtmlIfNeeded(text) : text);
+    }
+    static endsWithRtl(text, isHtml = false) {
+      return core.RegExp.new("[" + dart.str(intl.Bidi._RTL_CHARS) + "][^" + dart.str(intl.Bidi._LTR_CHARS) + "]*$").hasMatch(dart.dtest(isHtml) ? intl.Bidi.stripHtmlIfNeeded(text) : text);
+    }
+    static hasAnyLtr(text, isHtml = false) {
+      return core.RegExp.new("[" + dart.str(intl.Bidi._LTR_CHARS) + "]").hasMatch(dart.dtest(isHtml) ? intl.Bidi.stripHtmlIfNeeded(text) : text);
+    }
+    static hasAnyRtl(text, isHtml = false) {
+      return core.RegExp.new("[" + dart.str(intl.Bidi._RTL_CHARS) + "]").hasMatch(dart.dtest(isHtml) ? intl.Bidi.stripHtmlIfNeeded(text) : text);
+    }
+    static isRtlLanguage(languageString = null) {
+      let t0;
+      let language = (t0 = languageString, t0 == null ? intl.Intl.getCurrentLocale() : t0);
+      if (intl.Bidi._lastLocaleCheckedForRtl != language) {
+        intl.Bidi._lastLocaleCheckedForRtl = language;
+        intl.Bidi._lastRtlCheck = intl.Bidi._rtlLocaleRegex.hasMatch(language);
+      }
+      return intl.Bidi._lastRtlCheck;
+    }
+    static enforceRtlInHtml(html) {
+      return intl.Bidi._enforceInHtmlHelper(html, "rtl");
+    }
+    static enforceRtlInText(text) {
+      return "‫" + dart.str(text) + "‬";
+    }
+    static enforceLtrInHtml(html) {
+      return intl.Bidi._enforceInHtmlHelper(html, "ltr");
+    }
+    static enforceLtrInText(text) {
+      return "‪" + dart.str(text) + "‬";
+    }
+    static _enforceInHtmlHelper(html, direction) {
+      let t0, t0$;
+      if (html[$startsWith]("<")) {
+        let buffer = new core.StringBuffer.new();
+        let startIndex = 0;
+        let match = core.RegExp.new("<\\w+").firstMatch(html);
+        if (match != null) {
+          t0 = buffer;
+          (() => {
+            t0.write(html[$substring](startIndex, match.end));
+            t0.write(" dir=" + dart.str(direction));
+            return t0;
+          })();
+          startIndex = match.end;
+        }
+        return (t0$ = buffer, (() => {
+          t0$.write(html[$substring](startIndex));
+          return t0$;
+        })()).toString();
+      }
+      return "\n<span dir=" + dart.str(direction) + ">" + dart.str(html) + "</span>";
+    }
+    static guardBracketInHtml(str, isRtlContext = null) {
+      let useRtl = isRtlContext == null ? intl.Bidi.hasAnyRtl(str) : isRtlContext;
+      let matchingBrackets = core.RegExp.new("(\\(.*?\\)+)|(\\[.*?\\]+)|(\\{.*?\\}+)|(&lt;.*?(&gt;)+)");
+      return intl.Bidi._guardBracketHelper(str, matchingBrackets, "<span dir=" + (dart.test(useRtl) ? "rtl" : "ltr") + ">", "</span>");
+    }
+    static guardBracketInText(str, isRtlContext = null) {
+      let useRtl = isRtlContext == null ? intl.Bidi.hasAnyRtl(str) : isRtlContext;
+      let mark = dart.test(useRtl) ? "‏" : "‎";
+      return intl.Bidi._guardBracketHelper(str, core.RegExp.new("(\\(.*?\\)+)|(\\[.*?\\]+)|(\\{.*?\\}+)|(<.*?>+)"), mark, mark);
+    }
+    static _guardBracketHelper(str, regexp, before = null, after = null) {
+      let t0, t0$;
+      let buffer = new core.StringBuffer.new();
+      let startIndex = 0;
+      for (let match of regexp.allMatches(str)) {
+        t0 = buffer;
+        (() => {
+          t0.write(str[$substring](startIndex, match.start));
+          t0.write(before);
+          t0.write(str[$substring](match.start, match.end));
+          t0.write(after);
+          return t0;
+        })();
+        startIndex = match.end;
+      }
+      return (t0$ = buffer, (() => {
+        t0$.write(str[$substring](startIndex));
+        return t0$;
+      })()).toString();
+    }
+    static estimateDirectionOfText(text, opts) {
+      let isHtml = opts && 'isHtml' in opts ? opts.isHtml : false;
+      text = dart.test(isHtml) ? intl.Bidi.stripHtmlIfNeeded(text) : text;
+      let rtlCount = 0;
+      let total = 0;
+      let hasWeaklyLtr = false;
+      for (let token of text[$split](core.RegExp.new("\\s+"))) {
+        if (dart.test(intl.Bidi.startsWithRtl(token))) {
+          rtlCount = rtlCount + 1;
+          total = total + 1;
+        } else if (dart.test(core.RegExp.new("^http://").hasMatch(token))) {
+          hasWeaklyLtr = true;
+        } else if (dart.test(intl.Bidi.hasAnyLtr(token))) {
+          total = total + 1;
+        } else if (dart.test(core.RegExp.new("\\d").hasMatch(token))) {
+          hasWeaklyLtr = true;
+        }
+      }
+      if (total === 0) {
+        return hasWeaklyLtr ? intl.TextDirection.LTR : intl.TextDirection.UNKNOWN;
+      } else if (rtlCount > 0.4 * total) {
+        return intl.TextDirection.RTL;
+      } else {
+        return intl.TextDirection.LTR;
+      }
+    }
+    static normalizeHebrewQuote(str) {
+      let buf = new core.StringBuffer.new();
+      if (str[$isNotEmpty]) {
+        buf.write(str[$substring](0, 1));
+      }
+      for (let i = 1; i < str.length; i = i + 1) {
+        if (str[$substring](i, i + 1) === "\"" && dart.test(core.RegExp.new("[֑-ײ]").hasMatch(str[$substring](i - 1, i)))) {
+          buf.write("״");
+        } else if (str[$substring](i, i + 1) === "'" && dart.test(core.RegExp.new("[֑-ײ]").hasMatch(str[$substring](i - 1, i)))) {
+          buf.write("׳");
+        } else {
+          buf.write(str[$substring](i, i + 1));
+        }
+      }
+      return buf.toString();
+    }
+    static detectRtlDirectionality(str, opts) {
+      let isHtml = opts && 'isHtml' in opts ? opts.isHtml : false;
+      return dart.equals(intl.Bidi.estimateDirectionOfText(str, {isHtml: isHtml}), intl.TextDirection.RTL);
+    }
+  };
+  (intl.Bidi.new = function() {
+    ;
+  }).prototype = intl.Bidi.prototype;
+  dart.addTypeTests(intl.Bidi);
+  dart.addTypeCaches(intl.Bidi);
+  dart.setLibraryUri(intl.Bidi, I[1]);
+  dart.defineLazy(intl.Bidi, {
+    /*intl.Bidi.LRE*/get LRE() {
+      return "‪";
+    },
+    /*intl.Bidi.RLE*/get RLE() {
+      return "‫";
+    },
+    /*intl.Bidi.PDF*/get PDF() {
+      return "‬";
+    },
+    /*intl.Bidi.LRM*/get LRM() {
+      return "‎";
+    },
+    /*intl.Bidi.RLM*/get RLM() {
+      return "‏";
+    },
+    /*intl.Bidi._RTL_DETECTION_THRESHOLD*/get _RTL_DETECTION_THRESHOLD() {
+      return 0.4;
+    },
+    /*intl.Bidi._LTR_CHARS*/get _LTR_CHARS() {
+      return "A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02B8\\u0300-\\u0590\\u0800-\\u1FFF\\u2C00-\\uFB1C\\uFDFE-\\uFE6F\\uFEFD-\\uFFFF";
+    },
+    /*intl.Bidi._RTL_CHARS*/get _RTL_CHARS() {
+      return "\\u0591-\\u07FF\\uFB1D-\\uFDFD\\uFE70-\\uFEFC";
+    },
+    /*intl.Bidi._rtlLocaleRegex*/get _rtlLocaleRegex() {
+      return core.RegExp.new("^(ar|dv|he|iw|fa|nqo|ps|sd|ug|ur|yi|.*[-_]" + "(Arab|Hebr|Thaa|Nkoo|Tfng))(?!.*[-_](Latn|Cyrl)($|-|_))" + "($|-|_)", {caseSensitive: false});
+    },
+    /*intl.Bidi._lastLocaleCheckedForRtl*/get _lastLocaleCheckedForRtl() {
+      return null;
+    },
+    set _lastLocaleCheckedForRtl(_) {},
+    /*intl.Bidi._lastRtlCheck*/get _lastRtlCheck() {
+      return null;
+    },
+    set _lastRtlCheck(_) {}
+  }, true);
+  intl._CompactStyleBase = class _CompactStyleBase extends core.Object {};
+  (intl._CompactStyleBase.new = function() {
+    ;
+  }).prototype = intl._CompactStyleBase.prototype;
+  dart.addTypeTests(intl._CompactStyleBase);
+  dart.addTypeCaches(intl._CompactStyleBase);
+  dart.setLibraryUri(intl._CompactStyleBase, I[1]);
+  intl._CompactStyleWithNegative = class _CompactStyleWithNegative extends intl._CompactStyleBase {
+    styleForSign(number) {
+      return dart.dtest(dart.dsend(number, '<', [0])) ? this.negativeStyle : this.positiveStyle;
+    }
+    get totalDigits() {
+      return this.positiveStyle.totalDigits;
+    }
+    get divisor() {
+      return this.positiveStyle.divisor;
+    }
+    get allStyles() {
+      return T$.JSArrayOf_CompactStyleL().of([this.positiveStyle, this.negativeStyle]);
+    }
+  };
+  (intl._CompactStyleWithNegative.new = function(positiveStyle, negativeStyle) {
+    this.positiveStyle = positiveStyle;
+    this.negativeStyle = negativeStyle;
+    ;
+  }).prototype = intl._CompactStyleWithNegative.prototype;
+  dart.addTypeTests(intl._CompactStyleWithNegative);
+  dart.addTypeCaches(intl._CompactStyleWithNegative);
+  dart.setMethodSignature(intl._CompactStyleWithNegative, () => ({
+    __proto__: dart.getMethods(intl._CompactStyleWithNegative.__proto__),
+    styleForSign: dart.fnType(dart.legacy(intl._CompactStyle), [dart.dynamic])
+  }));
+  dart.setGetterSignature(intl._CompactStyleWithNegative, () => ({
+    __proto__: dart.getGetters(intl._CompactStyleWithNegative.__proto__),
+    totalDigits: dart.legacy(core.int),
+    divisor: dart.legacy(core.int),
+    allStyles: dart.legacy(core.List$(dart.legacy(intl._CompactStyle)))
+  }));
+  dart.setLibraryUri(intl._CompactStyleWithNegative, I[1]);
+  dart.setFieldSignature(intl._CompactStyleWithNegative, () => ({
+    __proto__: dart.getFields(intl._CompactStyleWithNegative.__proto__),
+    positiveStyle: dart.finalFieldType(dart.legacy(intl._CompactStyle)),
+    negativeStyle: dart.finalFieldType(dart.legacy(intl._CompactStyle))
+  }));
+  var divisor$ = dart.privateName(intl, "_CompactStyle.divisor");
+  intl._CompactStyle = class _CompactStyle extends intl._CompactStyleBase {
+    get divisor() {
+      return this[divisor$];
+    }
+    set divisor(value) {
+      this[divisor$] = value;
+    }
+    get totalDigits() {
+      return dart.notNull(this.normalizedExponent) + dart.notNull(this.expectedDigits) - 1;
+    }
+    get isFallback() {
+      return this.pattern == null || this.pattern === "0";
+    }
+    get printsAsIs() {
+      return dart.test(this.isFallback) || this.pattern[$replaceAll](core.RegExp.new("[0 ¤]"), "")[$isEmpty];
+    }
+    styleForSign(number) {
+      return this;
+    }
+    get allStyles() {
+      return T$.JSArrayOf_CompactStyleL().of([this]);
+    }
+  };
+  (intl._CompactStyle.new = function(opts) {
+    let pattern = opts && 'pattern' in opts ? opts.pattern : null;
+    let normalizedExponent = opts && 'normalizedExponent' in opts ? opts.normalizedExponent : 0;
+    let divisor = opts && 'divisor' in opts ? opts.divisor : 1;
+    let expectedDigits = opts && 'expectedDigits' in opts ? opts.expectedDigits : 1;
+    let prefix = opts && 'prefix' in opts ? opts.prefix : "";
+    let suffix = opts && 'suffix' in opts ? opts.suffix : "";
+    this.pattern = pattern;
+    this.normalizedExponent = normalizedExponent;
+    this[divisor$] = divisor;
+    this.expectedDigits = expectedDigits;
+    this.prefix = prefix;
+    this.suffix = suffix;
+    ;
+  }).prototype = intl._CompactStyle.prototype;
+  dart.addTypeTests(intl._CompactStyle);
+  dart.addTypeCaches(intl._CompactStyle);
+  dart.setMethodSignature(intl._CompactStyle, () => ({
+    __proto__: dart.getMethods(intl._CompactStyle.__proto__),
+    styleForSign: dart.fnType(dart.legacy(intl._CompactStyle), [dart.dynamic])
+  }));
+  dart.setGetterSignature(intl._CompactStyle, () => ({
+    __proto__: dart.getGetters(intl._CompactStyle.__proto__),
+    totalDigits: dart.legacy(core.int),
+    isFallback: dart.legacy(core.bool),
+    printsAsIs: dart.legacy(core.bool),
+    allStyles: dart.legacy(core.List$(dart.legacy(intl._CompactStyle)))
+  }));
+  dart.setLibraryUri(intl._CompactStyle, I[1]);
+  dart.setFieldSignature(intl._CompactStyle, () => ({
+    __proto__: dart.getFields(intl._CompactStyle.__proto__),
+    pattern: dart.fieldType(dart.legacy(core.String)),
+    normalizedExponent: dart.fieldType(dart.legacy(core.int)),
+    divisor: dart.fieldType(dart.legacy(core.int)),
+    expectedDigits: dart.fieldType(dart.legacy(core.int)),
+    prefix: dart.fieldType(dart.legacy(core.String)),
+    suffix: dart.fieldType(dart.legacy(core.String))
+  }));
+  var _name$ = dart.privateName(intl, "_name");
+  intl._CompactFormatType = class _CompactFormatType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (intl._CompactFormatType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = intl._CompactFormatType.prototype;
+  dart.addTypeTests(intl._CompactFormatType);
+  dart.addTypeCaches(intl._CompactFormatType);
+  dart.setMethodSignature(intl._CompactFormatType, () => ({
+    __proto__: dart.getMethods(intl._CompactFormatType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(intl._CompactFormatType, I[1]);
+  dart.setFieldSignature(intl._CompactFormatType, () => ({
+    __proto__: dart.getFields(intl._CompactFormatType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(intl._CompactFormatType, ['toString']);
+  intl._CompactFormatType.COMPACT_DECIMAL_SHORT_PATTERN = C[14] || CT.C14;
+  intl._CompactFormatType.COMPACT_DECIMAL_LONG_PATTERN = C[15] || CT.C15;
+  intl._CompactFormatType.COMPACT_DECIMAL_SHORT_CURRENCY_PATTERN = C[16] || CT.C16;
+  intl._CompactFormatType.values = C[17] || CT.C17;
+  var _styles = dart.privateName(intl, "_styles");
+  var _regex = dart.privateName(intl, "_regex");
+  var _justZeros = dart.privateName(intl, "_justZeros");
+  var _style = dart.privateName(intl, "_style");
+  var _compactSymbols = dart.privateName(intl, "_compactSymbols");
+  var _createStyle = dart.privateName(intl, "_createStyle");
+  var _hasNonZeroContent = dart.privateName(intl, "_hasNonZeroContent");
+  var _styleFor = dart.privateName(intl, "_styleFor");
+  var _divide = dart.privateName(intl, "_divide");
+  var _isForCurrency = dart.privateName(intl, "_isForCurrency");
+  var _fractionDigitsAfter = dart.privateName(intl, "_fractionDigitsAfter");
+  var _stylesForSearching = dart.privateName(intl, "_stylesForSearching");
+  var _tryParsing = dart.privateName(intl, "_tryParsing");
+  var maximumIntegerDigits = dart.privateName(intl, "NumberFormat.maximumIntegerDigits");
+  var minimumIntegerDigits = dart.privateName(intl, "NumberFormat.minimumIntegerDigits");
+  var maximumFractionDigits = dart.privateName(intl, "NumberFormat.maximumFractionDigits");
+  var minimumFractionDigits = dart.privateName(intl, "NumberFormat.minimumFractionDigits");
+  var minimumExponentDigits = dart.privateName(intl, "NumberFormat.minimumExponentDigits");
+  var significantDigitsInUse = dart.privateName(intl, "NumberFormat.significantDigitsInUse");
+  var currencyName = dart.privateName(intl, "NumberFormat.currencyName");
+  var _negativePrefix = dart.privateName(intl, "_negativePrefix");
+  var _positivePrefix = dart.privateName(intl, "_positivePrefix");
+  var _negativeSuffix = dart.privateName(intl, "_negativeSuffix");
+  var _positiveSuffix = dart.privateName(intl, "_positiveSuffix");
+  var _groupingSize = dart.privateName(intl, "_groupingSize");
+  var _finalGroupingSize = dart.privateName(intl, "_finalGroupingSize");
+  var _groupingSizeSetExplicitly = dart.privateName(intl, "_groupingSizeSetExplicitly");
+  var _decimalSeparatorAlwaysShown = dart.privateName(intl, "_decimalSeparatorAlwaysShown");
+  var _useSignForPositiveExponent = dart.privateName(intl, "_useSignForPositiveExponent");
+  var _useExponentialNotation = dart.privateName(intl, "_useExponentialNotation");
+  var _significantDigits = dart.privateName(intl, "_significantDigits");
+  var _internalMultiplier = dart.privateName(intl, "_internalMultiplier");
+  var _multiplierDigits = dart.privateName(intl, "_multiplierDigits");
+  var _pattern = dart.privateName(intl, "_pattern");
+  var _symbols = dart.privateName(intl, "_symbols");
+  var _currencySymbol = dart.privateName(intl, "_currencySymbol");
+  var _decimalDigits = dart.privateName(intl, "_decimalDigits");
+  var _buffer = dart.privateName(intl, "_buffer");
+  var _localeZero = dart.privateName(intl, "_localeZero");
+  var _zeroOffset = dart.privateName(intl, "_zeroOffset");
+  var _setPattern = dart.privateName(intl, "_setPattern");
+  var _multiplier = dart.privateName(intl, "_multiplier");
+  var _defaultDecimalDigits = dart.privateName(intl, "_defaultDecimalDigits");
+  var _overridesDecimalDigits = dart.privateName(intl, "_overridesDecimalDigits");
+  var _isNaN = dart.privateName(intl, "_isNaN");
+  var _isInfinite = dart.privateName(intl, "_isInfinite");
+  var _signPrefix = dart.privateName(intl, "_signPrefix");
+  var _add = dart.privateName(intl, "_add");
+  var _formatNumber = dart.privateName(intl, "_formatNumber");
+  var _signSuffix = dart.privateName(intl, "_signSuffix");
+  var _formatExponential = dart.privateName(intl, "_formatExponential");
+  var _formatFixed = dart.privateName(intl, "_formatFixed");
+  var _formatExponent = dart.privateName(intl, "_formatExponent");
+  var _pad = dart.privateName(intl, "_pad");
+  var _floor = dart.privateName(intl, "_floor");
+  var _round = dart.privateName(intl, "_round");
+  var _integerDigits = dart.privateName(intl, "_integerDigits");
+  var _hasIntegerDigits = dart.privateName(intl, "_hasIntegerDigits");
+  var _addDigit = dart.privateName(intl, "_addDigit");
+  var _group = dart.privateName(intl, "_group");
+  var _addZero = dart.privateName(intl, "_addZero");
+  var _decimalSeparator = dart.privateName(intl, "_decimalSeparator");
+  var _formatFractionPart = dart.privateName(intl, "_formatFractionPart");
+  var _mainIntegerDigits = dart.privateName(intl, "_mainIntegerDigits");
+  var _slowPad = dart.privateName(intl, "_slowPad");
+  intl.NumberFormat = class NumberFormat extends core.Object {
+    get maximumIntegerDigits() {
+      return this[maximumIntegerDigits];
+    }
+    set maximumIntegerDigits(value) {
+      this[maximumIntegerDigits] = value;
+    }
+    get minimumIntegerDigits() {
+      return this[minimumIntegerDigits];
+    }
+    set minimumIntegerDigits(value) {
+      this[minimumIntegerDigits] = value;
+    }
+    get maximumFractionDigits() {
+      return this[maximumFractionDigits];
+    }
+    set maximumFractionDigits(value) {
+      this[maximumFractionDigits] = value;
+    }
+    get minimumFractionDigits() {
+      return this[minimumFractionDigits];
+    }
+    set minimumFractionDigits(value) {
+      this[minimumFractionDigits] = value;
+    }
+    get minimumExponentDigits() {
+      retur
