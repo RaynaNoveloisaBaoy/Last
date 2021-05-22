@@ -32,10 +32,7 @@ jobs:
          uses: britannio/action-install-flutter@v1.0
          with:
           version: $FLUTTER_VERSION
-       #- run: echo $PATH
-         # run: where flutter 
-          run: 
-            cd build
+
        - name: Installing dependencies
          run: flutter pub get
       # - name: Running tests
