@@ -1,6 +1,10 @@
 name: Flutter CI
 env:
   FLUTTER_VERSION: "stable"
+defaults:
+  run:
+    working-directory: client
+    
 on:
   push:
     branches: [ main ]
