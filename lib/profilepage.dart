@@ -4,11 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wap/database.dart';
 import 'package:flutter/material.dart';
 import 'package:wap/editprofile.dart';
-import 'package:wap/petprofilepage.dart';
 import 'package:wap/settingsPage.dart';
 import 'package:wap/home_page.dart';
 import 'package:wap/searchPage.dart';
-import 'package:wap/setupPetProfile.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -591,15 +589,13 @@ class _ProfilePageState extends State<ProfilePage> {
               IconButton(
                   icon: Icon(Icons.add, color: Colors.teal),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SetupPetProfile()));
+                    print("Add pet profile");
                   }),
             ],
           ),
           Container(
               height: size.height * 0.41,
+              //color: Colors.teal,
               child: ListView.builder(
                 controller: controller,
                 itemCount: PET_LIST.length,
@@ -645,13 +641,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   TextButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  PetProfilePage()));
-                                    },
+                                    onPressed: () {},
                                     child: Text(PET_LIST[index]["name"],
                                         style: const TextStyle(
                                             color: Colors.black,

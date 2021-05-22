@@ -1,16 +1,9 @@
-import 'dart:math';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:recase/recase.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:wap/addPost.dart';
 import 'package:wap/database.dart';
 import 'package:flutter/material.dart';
 import 'package:wap/editprofile.dart';
-import 'package:wap/profilepage.dart';
 import 'package:wap/settingsPage.dart';
 import 'package:wap/searchPage.dart';
 
@@ -20,42 +13,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int selectedIndex = 0;
   final FirebaseAuth auth = FirebaseAuth.instance;
   int _selectedIndex = 0;
   String un = "WAP USER";
   String thisname = "WAP USER";
-
+  String bio = " ";
+  String address = "The user has not set this yet.";
+  String contact = "The user has not set this yet.";
+  String nickname = "The user has not set this yet.";
   dynamic pic = AssetImage('assets/images/defaultPic.png');
-
   ScrollController controller = ScrollController();
   bool isLoading = true;
   List<bool> _isChecked;
-  List<String> userID = [];
-  List<dynamic> userPics = [];
-  List<MemoryImage> userPosts = [];
-  List<String> userCaptions = [];
 
   initState() {
     super.initState();
     if (!mounted) {
       return;
     }
-    final dbGet = DatabaseService(uid: auth.currentUser.uid);
-    dbGet.getFollowing().then((value) async {
-      await Future.forEach(value, (id) async {
-        if (!userID.contains(id)) {
-          userID.add(id);
-        }
-      });
-    });
-    String name = auth.currentUser.uid;
-    String name2 = "1";
-    final storageReference = FirebaseStorage.instance
-        .ref()
-        .child("Posts/$name/$name2")
-        .listAll()
-        .then((value) => {userPics.add(value)});
-    print(userPics.length);
     getUserData().then((value) {
       setState(() {
         isLoading = false;
@@ -69,19 +45,7 @@ class _HomePageState extends State<HomePage> {
     }
     final User user = auth.currentUser;
     final dbGet = DatabaseService(uid: user.uid);
-    dbGet.getFollowingPosts(user.uid).then((value) async {
-      await Future.forEach(value, (id) async {
-        if (!userPosts.contains(id)) {
-          userPosts.add(id.image);
-          print(userPosts.length);
-          if (id.caption != null) {
-            userCaptions.add(id.caption);
-          }
-        }
-      });
-    });
-
-    print(userCaptions.length);
+    dynamic uname = await dbGet.getUsername();
     dynamic name1 = await dbGet.getName();
     if (name1 == null) {
       name1 = await dbGet.getName2();
@@ -89,6 +53,22 @@ class _HomePageState extends State<HomePage> {
     } else {
       thisname = name1;
     }
+    dynamic bio1 = await dbGet.getBio();
+
+    if (bio1 != null) {
+      dynamic nickname1 = await dbGet.getNickname();
+      dynamic address1 = await dbGet.getAddress();
+      dynamic contact1 = await dbGet.getContact();
+      setState(() {
+        bio = bio1;
+        nickname = nickname1;
+        address = address1;
+        contact = contact1;
+      });
+    }
+    setState(() {
+      un = uname;
+    });
 
     var temp = await DatabaseService(uid: user.uid).getPicture();
     if (temp != null) {
@@ -116,10 +96,7 @@ class _HomePageState extends State<HomePage> {
         }
         break;
       case 2:
-        {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => ProfilePage()));
-        }
+        {}
         break;
       case 3:
         {}
@@ -150,14 +127,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.transparent,
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => AddPostPage()));
-        },
-        child: Image.asset('assets/images/postButton.png'),
-      ),
       body: isLoading
           ? LinearProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.teal[900]),
@@ -165,104 +134,13 @@ class _HomePageState extends State<HomePage> {
             )
           : ListView(
               children: [
-                Container(
-                    height: size.height * 0.8,
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      controller: controller,
-                      itemCount: 2, //userPosts.length
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                child: Column(
-                                  children: [
-                                    new Row(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.all(5),
-                                          child: CircleAvatar(
-                                            radius: 20,
-                                            backgroundImage: pic,
-                                          ),
-                                        ),
-                                        Text(
-                                          thisname,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 13,
-                                            fontFamily: 'Montserrat',
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          top: 10, bottom: 10, left: 5),
-                                      child: Container(
-                                        alignment: Alignment.topLeft,
-                                        child: Text(
-                                          "HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA",
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                            fontFamily: 'Montserrat',
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(5),
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(
-                                            image: DecorationImage(image: pic),
-                                            color: Colors.teal,
-                                            shape: BoxShape.rectangle),
-                                        child: Image.asset(
-                                            'assets/images/post.jpeg'),
-                                      ),
-                                    ),
-                                    Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding: EdgeInsets.only(left: 15),
-                                            child: ImageIcon(
-                                              // alignment: Alignment.topLeft,
-                                              AssetImage(
-                                                  'assets/images/heart.png'),
-                                              color: Colors.teal,
-                                            ),
-                                          ),
-                                          /*  IconButton(
-                                              // alignment: Alignment.topLeft,
-                                              icon: Icon(
-                                                Icons.comment,
-                                                color: Colors.teal,
-                                              ),
-                                              onPressed: () {}),*/
-                                          IconButton(
-                                              // alignment: Alignment.topLeft,
-                                              icon: Icon(
-                                                Icons.bookmark,
-                                                color: Colors.teal,
-                                              ),
-                                              onPressed: () {}),
-                                        ]),
-                                    Divider(),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    )),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [],
+                  ),
+                ),
               ],
             ),
       bottomNavigationBar: BottomNavigationBar(
@@ -298,6 +176,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  addPost() {}
 }
