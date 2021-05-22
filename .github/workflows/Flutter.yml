@@ -30,7 +30,7 @@ jobs:
         - run: git clone https://github.com/flutter/flutter.git --depth 1 -b v1.15.17 _flutter
         - run: echo "::add-path::$GITHUB_WORKSPACE/_flutter/bin"
         
-        - run: flutter doctor
+        #- run: flutter doctor
         - run: flutter pub get
           working-directory: ./
         - run: flutter build ios --no-codesign
@@ -48,7 +48,7 @@ jobs:
         - run: git clone https://github.com/flutter/flutter.git --depth 1 -b v1.15.17 _flutter
         - run: echo "::add-path::$GITHUB_WORKSPACE/_flutter/bin"
        
-        - run: flutter doctor
+        #- run: flutter doctor
         - run: flutter pub get
           working-directory: ./
         - run: flutter build appbundle
