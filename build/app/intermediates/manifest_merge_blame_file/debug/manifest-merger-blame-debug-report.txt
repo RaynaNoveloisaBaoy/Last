@@ -12,26 +12,26 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:3:1-62
-14-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:3:18-60
+14-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:3:1-62
+14-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:3:18-60
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
-15-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+15-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+15-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
 16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-16-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
-16-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
+16-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
+16-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
 17
 18    <queries>
-18-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-15:15
+18-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-15:15
 19        <intent>
-19-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-14:18
+19-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-14:18
 20            <action android:name="android.intent.action.GET_CONTENT" />
-20-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-72
-20-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:21-69
+20-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-72
+20-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:21-69
 21
 22            <data android:mimeType="*/*" />
-22-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-44
-22-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-41
+22-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-44
+22-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-41
 23        </intent>
 24    </queries> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 25    <!-- <uses-sdk android:minSdkVersion="14" /> -->
@@ -46,30 +46,30 @@
 28-->[com.google.android.gms:play-services-measurement:18.0.2] C:\Users\Rayna Noveloisa Baoy\.gradle\caches\transforms-2\files-2.1\597b2f0b8c3a797cc8fdd071fd492a7a\jetified-play-services-measurement-18.0.2\AndroidManifest.xml:26:22-107
 29
 30    <application
-30-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:4:4-42:19
+30-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:4:4-42:19
 31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 31-->[androidx.core:core:1.1.0] C:\Users\Rayna Noveloisa Baoy\.gradle\caches\transforms-2\files-2.1\d481b4719f34ec119768e958e701eaf6\core-1.1.0\AndroidManifest.xml:24:18-86
 32        android:debuggable="true"
 33        android:icon="@mipmap/ic_launcher"
-33-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:6:9-43
+33-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:6:9-43
 34        android:label="wap"
-34-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:5:9-28
+34-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:5:9-28
 35        android:usesCleartextTraffic="true" >
-35-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:7:9-44
+35-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:7:9-44
 36        <activity
-36-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:8:9-36:20
+36-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:8:9-36:20
 37            android:name="com.example.wap.MainActivity"
-37-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:9:13-41
+37-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:9:13-41
 38            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-38-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:12:13-163
+38-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:12:13-163
 39            android:hardwareAccelerated="true"
-39-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:13:13-47
+39-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:13:13-47
 40            android:launchMode="singleTop"
-40-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:10:13-43
+40-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:10:13-43
 41            android:theme="@style/LaunchTheme"
-41-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:11:13-47
+41-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:11:13-47
 42            android:windowSoftInputMode="adjustResize" >
-42-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:14:13-55
+42-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:14:13-55
 43
 44            <!--
 45                 Specifies an Android theme to apply to this Activity as soon as
@@ -78,11 +78,11 @@
 48                 to determine the Window background behind the Flutter UI.
 49            -->
 50            <meta-data
-50-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:19:13-22:17
+50-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:19:13-22:17
 51                android:name="io.flutter.embedding.android.NormalTheme"
-51-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:20:15-70
+51-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:20:15-70
 52                android:resource="@style/NormalTheme" />
-52-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:21:15-52
+52-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:21:15-52
 53            <!--
 54                 Displays an Android View that continues showing the launch screen
 55                 Drawable until Flutter paints its first frame, then this splash
@@ -91,21 +91,21 @@
 58                 Flutter's first frame.
 59            -->
 60            <meta-data
-60-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:28:13-31:17
+60-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:28:13-31:17
 61                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-61-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:29:15-79
+61-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:29:15-79
 62                android:resource="@drawable/launch_background" />
-62-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:30:15-61
+62-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:30:15-61
 63
 64            <intent-filter>
-64-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:32:13-35:29
+64-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:32:13-35:29
 65                <action android:name="android.intent.action.MAIN" />
-65-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:33:17-68
-65-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:33:25-66
+65-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:33:17-68
+65-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:33:25-66
 66
 67                <category android:name="android.intent.category.LAUNCHER" />
-67-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:34:17-76
-67-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:34:27-74
+67-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:34:17-76
+67-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:34:27-74
 68            </intent-filter>
 69        </activity>
 70        <!--
@@ -113,44 +113,44 @@
 72             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 73        -->
 74        <meta-data
-74-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:39:9-41:33
+74-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:39:9-41:33
 75            android:name="flutterEmbedding"
-75-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:40:13-44
+75-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:40:13-44
 76            android:value="2" />
-76-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\android\app\src\main\AndroidManifest.xml:41:13-30
+76-->C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\android\app\src\main\AndroidManifest.xml:41:13-30
 77
 78        <service
-78-->[:firebase_auth] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+78-->[:firebase_auth] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 79            android:name="com.google.firebase.components.ComponentDiscoveryService"
-79-->[:firebase_auth] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+79-->[:firebase_auth] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
 80            android:directBootAware="true"
 80-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Rayna Noveloisa Baoy\.gradle\caches\transforms-2\files-2.1\a348beea78586f27ffc2391bf0a13f9b\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
 81            android:exported="false" >
 81-->[com.google.firebase:firebase-firestore:22.1.2] C:\Users\Rayna Noveloisa Baoy\.gradle\caches\transforms-2\files-2.1\d0faf97514a224ed3f090e4a1c96567e\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:19:13-37
 82            <meta-data
-82-->[:firebase_auth] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+82-->[:firebase_auth] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 83                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-83-->[:firebase_auth] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+83-->[:firebase_auth] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
 84                android:value="com.google.firebase.components.ComponentRegistrar" />
-84-->[:firebase_auth] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+84-->[:firebase_auth] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 85            <meta-data
-85-->[:firebase_storage] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+85-->[:firebase_storage] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 86                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-86-->[:firebase_storage] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
+86-->[:firebase_storage] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
 87                android:value="com.google.firebase.components.ComponentRegistrar" />
-87-->[:firebase_storage] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+87-->[:firebase_storage] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 88            <meta-data
-88-->[:cloud_firestore] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+88-->[:cloud_firestore] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 89                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-89-->[:cloud_firestore] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
+89-->[:cloud_firestore] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
 90                android:value="com.google.firebase.components.ComponentRegistrar" />
-90-->[:cloud_firestore] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+90-->[:cloud_firestore] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 91            <meta-data
-91-->[:firebase_core] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+91-->[:firebase_core] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 92                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-92-->[:firebase_core] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+92-->[:firebase_core] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
 93                android:value="com.google.firebase.components.ComponentRegistrar" />
-93-->[:firebase_core] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+93-->[:firebase_core] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 94            <meta-data
 94-->[com.google.firebase:firebase-firestore:22.1.2] C:\Users\Rayna Noveloisa Baoy\.gradle\caches\transforms-2\files-2.1\d0faf97514a224ed3f090e4a1c96567e\jetified-firebase-firestore-22.1.2\AndroidManifest.xml:20:13-22:85
 95                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
@@ -194,21 +194,21 @@
 116        </service>
 117
 118        <provider
-118-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
+118-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
 119            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-119-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
+119-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
 120            android:authorities="com.example.wap.flutter.image_provider"
-120-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
+120-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
 121            android:exported="false"
-121-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
+121-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
 122            android:grantUriPermissions="true" >
-122-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
+122-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
 123            <meta-data
-123-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
+123-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
 124                android:name="android.support.FILE_PROVIDER_PATHS"
-124-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
+124-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
 125                android:resource="@xml/flutter_image_picker_file_paths" />
-125-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
+125-->[:image_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
 126        </provider>
 127
 128        <activity
@@ -237,7 +237,7 @@
 138-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Rayna Noveloisa Baoy\.gradle\caches\transforms-2\files-2.1\4c933b82fb6ca37692eafcf5e1e9e376\jetified-firebase-auth-20.0.3\AndroidManifest.xml:37:27-75
 139
 140                <data
-140-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-44
+140-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-44
 141                    android:host="firebase.auth"
 142                    android:path="/"
 143                    android:scheme="genericidp" />
@@ -269,7 +269,7 @@
 156-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Rayna Noveloisa Baoy\.gradle\caches\transforms-2\files-2.1\4c933b82fb6ca37692eafcf5e1e9e376\jetified-firebase-auth-20.0.3\AndroidManifest.xml:37:27-75
 157
 158                <data
-158-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-44
+158-->[:file_picker] C:\Users\Rayna Noveloisa Baoy\Documents\SPRINT 3\WAP-master\Last\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-44
 159                    android:host="firebase.auth"
 160                    android:path="/"
 161                    android:scheme="recaptcha" />
