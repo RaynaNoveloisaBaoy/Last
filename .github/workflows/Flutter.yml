@@ -35,7 +35,7 @@ jobs:
        #- run: echo $PATH
          # run: where flutter 
           run: 
-            cd Build
+            cd build
        - name: Installing dependencies
          run: flutter pub get
       # - name: Running tests
