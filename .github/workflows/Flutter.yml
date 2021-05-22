@@ -24,6 +24,9 @@ jobs:
 #set up flutter
   buildFlutter:
     runs-on: ubuntu-latest
+    defaults:
+       run:
+        working-directory: "/home/runner/work/Last/Last/flutter"
    # env:
     #    ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
